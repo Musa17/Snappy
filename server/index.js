@@ -39,6 +39,10 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+// requiring socket for simple peer connections(video calling) and for chatting
+require("./utils/simple-peer-connections")(io);
+require("./utils/socket-connections")(io);
+
 // Requiring routers from routers folder
 const userRouter = require("./router/userRouter");
 const conversationRouter = require("./router/conversationRouter");
