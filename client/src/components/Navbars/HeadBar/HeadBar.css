@@ -1,0 +1,117 @@
+.headBar {
+  display: flex;
+  position: fixed;
+  background-color: #012169;
+  height: 50px;
+  width: 100%;
+  color: #fff;
+  /* margin-bottom: 50px; */
+  top: 0;
+}
+
+.headBarBox {
+  width: 65px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.SnappyLogo {
+  height: 35px;
+  width: 35px;
+}
+
+.dots {
+  line-height: 7px;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.headSubBarBox {
+  display: flex;
+  width: calc(100% - 65px);
+  /* width: 100%; */
+  align-items: center;
+}
+
+.headBarHeading {
+  flex: 3;
+}
+
+.headBarText {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.headBarSearch {
+  flex: 9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerBarSearchInput {
+  width: 65%;
+  /* height: 25px; */
+  background-color: #073980;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  z-index: 1000;
+}
+
+.headerBarSearchInput::placeholder {
+  color: #B0C4DE;
+}
+
+.headerBarProfile {
+  padding-right: 30px;
+}
+
+.headerBarProfileImg {
+  height: 40px;
+  width: 40px;
+  background-color: #7f81e1 !important;
+  border-color: #7f81e1 !important;
+  border-radius: 50% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.headerBarProfileImg:focus {
+  box-shadow: none !important;
+}
+
+@media only screen and (max-width: 862px) {
+  .headBarSearch {
+    /* flex: 12;
+    justify-content: space-between; */
+    width: 95%;
+  }
+
+  .headerBarSearchInput {
+    width: 90%;
+    /* margin-left: 20px; */
+    text-align: left;
+  }
+
+  .headSubBarBox {
+    width: 95%;
+    margin: 0 20px;
+    justify-content: space-between;
+  }
+
+  .headerBarProfile {
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .headerBarSearchInput {
+    width: 80%;
+  }
+}

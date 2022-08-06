@@ -50,6 +50,7 @@
   color: #444;
   padding: 20px 0;
 }
+
 .detailsDesc {
   padding-bottom: 20px;
 }
@@ -64,6 +65,7 @@
   padding: 10px;
   font-size: 16px;
 }
+
 .authInput:focus{
   outline: none;
   border-bottom: 2px solid #86b9e0
@@ -77,16 +79,20 @@
   color: #fff;
   margin-top: 40px;
 }
+
 .authRadio {
   display: flex;
 }
+
 .radioBtn {
   margin-right: 10px;
 }
+
 .optionHeading {
   font-weight: 500;
   font-size: 18px;
 }
+
 .optionDesc {
   padding-bottom: 20px;
 }
@@ -96,11 +102,7 @@
     width: 90%;
   }
 }
-/* @media only screen and (max-width: 500px) {
-  .authCard {
-    width: 400px;
-  }
-} */
+
 .OtherAuth {
   padding-top: 10px;
   color: #7375e7;

@@ -16,6 +16,7 @@ import {
 import Home from "./components/Home/Home";
 import Signup from "./components/Authentication/Signup/Signup";
 import Login from "./components/Authentication/Login/Login";
+import HeadBar from "./components/Navbars/HeadBar/HeadBar";
 import { initialState, reducer } from "./reducer/userReducer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -49,6 +50,7 @@ const Routing = () => {
 
   return (
     <React.Fragment>
+      {(state || user) && <HeadBar />}
       <Switch>
         {!state && !user && (
           <Route path="/signup">
@@ -65,6 +67,7 @@ const Routing = () => {
             <Home />
           </Route>
         )}
+        {(state || user) && <Redirect to="/teams" exact />}
         {!state && !user && <Redirect to="/home" exact />}
       </Switch>
     </React.Fragment>
