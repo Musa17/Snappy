@@ -18,13 +18,7 @@
 .SnappyLogo {
   height: 35px;
   width: 35px;
-}
-
-.dots {
-  line-height: 7px;
-  font-size: 16px;
-  font-weight: 700;
-  width: 100%;
+  margin-left: 25px;
 }
 
 .headSubBarBox {
@@ -84,6 +78,10 @@
 
 .headerBarProfileImg:focus {
   box-shadow: none !important;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
 }
 
 @media only screen and (max-width: 862px) {
