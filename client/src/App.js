@@ -7,11 +7,13 @@ import React, {
 } from "react";
 import {
   BrowserRouter,
+  Redirect,
   Route,
   Switch,
   useHistory,
 } from "react-router-dom";
 
+import Home from "./components/Home/Home";
 import Signup from "./components/Authentication/Signup/Signup";
 import Login from "./components/Authentication/Login/Login";
 import { initialState, reducer } from "./reducer/userReducer";
@@ -58,6 +60,12 @@ const Routing = () => {
             <Login />
           </Route>
         )}
+        {!state && !user && (
+          <Route path="/home">
+            <Home />
+          </Route>
+        )}
+        {!state && !user && <Redirect to="/home" exact />}
       </Switch>
     </React.Fragment>
   );
