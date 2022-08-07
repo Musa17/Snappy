@@ -4,6 +4,7 @@ import * as chatApi from "../../api/chatting";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
 import { ToastContainer, toast } from "react-toastify";
+import CreateTeams from "./CreateTeams/CreateTeam";
 import Loading from "../General/Loading/Loading";
 
 const Teams = (props) => {
@@ -59,6 +60,20 @@ const Teams = (props) => {
           Join or Create Team
         </div>
       </div>
+      {!teams || teams.length === 0 ? (
+        <div
+          className={
+            window.innerHeight < window.innerWidth
+              ? "createTeamsList"
+              : "createTeamsListFullWidth"
+          }
+        >
+          <CreateTeams newTeamsHadler={(team) => newTeamsHadler(team)} />
+        </div>
+      ) : (
+        <div className="teamsDisplay">
+        </div>
+      )}
     </div>
   );
 };

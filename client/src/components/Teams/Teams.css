@@ -32,6 +32,19 @@
   margin: 1.1%;
 }
 
+.createTeamsList, .createTeamsListFullWidth {
+  min-height: 100vh;
+  background-color: #1e3e7d;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.createTeamsList {
+  margin-left: 65px;
+  padding: 70px 20px 20px;
+}
+
 .joinOrCreateTeamsBtn {
   border: 3px solid rgb(210, 210, 210);
   background: #152b59;
