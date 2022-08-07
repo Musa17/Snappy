@@ -6,6 +6,7 @@ import { UserContext } from "../../App";
 import { ToastContainer, toast } from "react-toastify";
 import CreateTeams from "./CreateTeams/CreateTeam";
 import JoinTeams from "./JoinTeams/JoinTeams";
+import TeamsBox from "./TeamsBox/TeamsBox";
 import Loading from "../General/Loading/Loading";
 
 const Teams = (props) => {
@@ -74,6 +75,9 @@ const Teams = (props) => {
         </div>
       ) : (
         <div className="teamsDisplay">
+          {teams.map((team, id) => (
+            <TeamsBox team={team} key={id} />
+          ))}
         </div>
       )}
     </div>
