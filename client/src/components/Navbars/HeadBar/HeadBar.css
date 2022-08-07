@@ -2,7 +2,7 @@
   display: flex;
   position: fixed;
   background-color: #012169;
-  height: 50px;
+  height: 60px;
   width: 100%;
   color: #fff;
   /* margin-bottom: 50px; */
@@ -11,7 +11,9 @@
 
 .headBarBox {
   width: 65px;
+  display: flex;
   text-align: center;
+  align-items: center;
   padding: 8px 0;
 }
 

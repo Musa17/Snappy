@@ -1,0 +1,66 @@
+import React, { useContext, useEffect, useState } from "react";
+import "./Teams.css";
+import * as chatApi from "../../api/chatting";
+import { useHistory } from "react-router-dom";
+import { UserContext } from "../../App";
+import { ToastContainer, toast } from "react-toastify";
+import Loading from "../General/Loading/Loading";
+
+const Teams = (props) => {
+  const [teams, setTeams] = useState();
+  const { state, dispatch } = useContext(UserContext);
+  const history = useHistory();
+  const [newTeams, setNewTeams] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  const newTeamsHadler = (team) => {
+    setNewTeams(team);
+  };
+
+  useEffect(() => {
+    // Getting all the teams for the user from the server
+    const fetchData = async () => {
+      try {
+        const res = await chatApi.getTeams(state._id);
+        if (!res.data.status) console.log(res.data.message);
+        else {
+          setTeams(res.data.data);
+          setIsLoading(false);
+        }
+      } catch (err) {
+        console.log(err);
+        toast(
+          `${
+            err.response && err.response.data
+              ? err.response.data.message
+              : "Something went wrong."
+          }`
+        );
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, [state, setTeams, newTeams]);
+
+  if (isLoading) return <Loading />;
+  return (
+    <div
+      className={
+        window.innerHeight < window.innerWidth ? "teams" : "teamsFullWidth"
+      }
+    >
+      <ToastContainer />
+      <div className="teamsNav">
+        <div className="teamsTitle">Teams</div>
+        <div
+          className="joinOrCreateTeamsBtn"
+          onClick={() => history.push("/createTeams")}
+        >
+          Join or Create Team
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Teams;
