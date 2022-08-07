@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
 import { ToastContainer, toast } from "react-toastify";
 import CreateTeams from "./CreateTeams/CreateTeam";
+import JoinTeams from "./JoinTeams/JoinTeams";
 import Loading from "../General/Loading/Loading";
 
 const Teams = (props) => {
@@ -69,6 +70,7 @@ const Teams = (props) => {
           }
         >
           <CreateTeams newTeamsHadler={(team) => newTeamsHadler(team)} />
+          <JoinTeams newTeamsHadler={(team) => newTeamsHadler(team)} />
         </div>
       ) : (
         <div className="teamsDisplay">
