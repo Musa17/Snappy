@@ -33,14 +33,14 @@
 }
 
 .joinOrCreateTeamsBtn {
-  border: 1px solid #aaa;
-  background: #161616;
+  border: 3px solid rgb(210, 210, 210);
+  background: #152b59;
   cursor: pointer;
   /* width: fit-content; */
   padding: 5px 20px;
   font-size: 14px;
   margin: 1.1%;
-  box-shadow: 0px 0px 3px 1px #161616;
+  box-shadow: 0px 0px 3px 1px #152b59;
   /* margin-right: 1.2%; */
 }
 
