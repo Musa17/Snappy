@@ -17,6 +17,7 @@ import Home from "./components/Home/Home";
 import Signup from "./components/Authentication/Signup/Signup";
 import Login from "./components/Authentication/Login/Login";
 import Teams from "./components/Teams/Teams";
+import CreateTeamsPage from "./components/Teams/CreateTeamPage/CreateTeamsPage";
 import HeadBar from "./components/Navbars/HeadBar/HeadBar";
 import SideNavbar from "./components/Navbars/SideNavbar/SideNavbar";
 import { initialState, reducer } from "./reducer/userReducer";
@@ -66,6 +67,11 @@ const Routing = () => {
         {(state || user) && (
           <Route path="/teams" exact>
             <Teams />
+          </Route>
+        )}
+        {(state || user) && (
+          <Route path="/createTeams">
+            <CreateTeamsPage />
           </Route>
         )}
         {!state && !user && (
