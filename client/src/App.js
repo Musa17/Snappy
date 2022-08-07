@@ -21,6 +21,7 @@ import SideNavbar from "./components/Navbars/SideNavbar/SideNavbar";
 import { initialState, reducer } from "./reducer/userReducer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "./components/General/Loading/Loading";
 
 export const UserContext = createContext();
 
@@ -40,6 +41,12 @@ const Routing = () => {
   const { state, dispatch } = useContext(UserContext);
   const [routers, setRouters] = useState(initial);
   const [user, setUser] = useState();
+  const [spinner, setSpinner] = useState(true);
+
+  // Loading in the opening the project
+  useEffect(() => {
+      setTimeout(() => setSpinner(false), 1000);
+  }, []);
 
   // Searching for logged in user
   useEffect(() => {
@@ -49,6 +56,7 @@ const Routing = () => {
     // log
   }, []);
 
+  if (spinner && (state || user)) return <Loading />;
   return (
     <React.Fragment>
       {(state || user) && <HeadBar />}

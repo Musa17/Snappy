@@ -1,0 +1,13 @@
+.Loading{
+    width: 100%;
+    height: 100vh;
+    background: #012169;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoadingImage{
+    width: 150px;
+    height: 150px;
+}
