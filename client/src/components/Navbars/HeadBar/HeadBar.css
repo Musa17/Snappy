@@ -86,6 +86,62 @@
   display: none !important;
 }
 
+.dropdownBody {
+  top: 2px !important;
+  background-color: #073980 !important;
+  color: #fff !important;
+  box-shadow: 0px 0px 8px 3px #0a204e;
+  /* right: -10px !important; */
+  left: 100% !important;
+  min-width: 350px !important;
+  padding: 0 0 !important;
+  position: absolute !important;
+  inset: 0px auto auto 0px !important;
+  margin: 0px !important;
+  transform: translate3d(-310px, 42px, 0px) !important;
+}
+
+.profileOfUser {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px 15px;
+  border-bottom: 2px solid #0a204e;
+}
+
+.profileOfUserImg {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background-color: #7f81e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.profileOfUserImgDetails {
+  padding: 0 10px;
+  margin-left: 10px;
+}
+
+.profileOfUserImgDetailsName {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.profileOfUserImgDetailsEmail {
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 400;
+}
+
+.signout {
+  padding: 15px 20px;
+  font-weight: 500;
+  color: #ddd;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 862px) {
   .headBarSearch {
     /* flex: 12;

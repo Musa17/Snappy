@@ -52,6 +52,32 @@ const HeadBar = (props) => {
                 >
                   {state.name.match(/\b(\w)/g).join("")}
                 </Dropdown.Toggle>
+
+                <Dropdown.Menu className="dropdownBody">
+                  <div className="profileOfUser">
+                    <div className="profileOfUserImg">
+                      {state.name.match(/\b(\w)/g).join("")}
+                    </div>
+                    <div className="profileOfUserImgDetails">
+                      <div className="profileOfUserImgDetailsName">
+                        {state.name}
+                      </div>
+                      <div className="profileOfUserImgDetailsEmail">
+                        {state.email}
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="signout"
+                    onClick={() => {
+                      // function to clear the user data in the local storage and state
+                      localStorage.clear();
+                      dispatch({ type: "CLEAR" });
+                    }}
+                  >
+                    Sign Out
+                  </div>
+                </Dropdown.Menu>
               </Dropdown>
             </div>
           )}
