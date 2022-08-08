@@ -1,0 +1,16 @@
+.NewChat {
+  height: 100vh;
+  /* margin-top: 50px; */
+  /* top: 50px; */
+  /* display: flex; */
+  margin-left: 65px;
+  padding-top: 70px;
+  padding-left: 40px;
+  background-color: #1e3e7d;
+}
+
+.newChat {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 70px);
+}

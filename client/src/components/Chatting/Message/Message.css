@@ -22,7 +22,7 @@
 .messageBox {
   max-width: 70%;
   font-size: 14px;
-  background-color: #444793;
+  background-color: #474ba9;
   border-radius: 4px;
   padding: 10px 15px;
   /* height: fit-content; */
@@ -34,7 +34,7 @@
 }
 
 .message.own .messageBox {
-  background-color: #202252;
+  background-color: #1d2167;
   color: #fff;
 }
 
