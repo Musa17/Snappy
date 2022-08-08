@@ -1,0 +1,10 @@
+.SidebarHeading {
+  border-bottom: 1px solid #06183d;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.SidebarHeadingContent {
+  margin: 4px 30px;
+}

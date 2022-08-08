@@ -18,6 +18,7 @@ import Signup from "./components/Authentication/Signup/Signup";
 import Login from "./components/Authentication/Login/Login";
 import Teams from "./components/Teams/Teams";
 import CreateTeamsPage from "./components/Teams/CreateTeamPage/CreateTeamsPage";
+import Chat from "./components/Chatting/Chat";
 import HeadBar from "./components/Navbars/HeadBar/HeadBar";
 import SideNavbar from "./components/Navbars/SideNavbar/SideNavbar";
 import { initialState, reducer } from "./reducer/userReducer";
@@ -65,6 +66,11 @@ const Routing = () => {
       {(state || user) && <SideNavbar />}
       <Switch>
         {(state || user) && (
+          <Route path="/chat">
+            <Chat />
+          </Route>
+        )}
+        {(state || user) && (
           <Route path="/teams" exact>
             <Teams />
           </Route>
@@ -89,8 +95,8 @@ const Routing = () => {
             <Home />
           </Route>
         )}
-        {(state || user) && <Redirect to="/teams" exact />}
-        {!state && !user && <Redirect to="/home" exact />}
+        {/*(state || user) && <Redirect to="/teams" exact />*/}
+        {/*!state && !user && <Redirect to="/home" exact />*/}
       </Switch>
     </React.Fragment>
   );
