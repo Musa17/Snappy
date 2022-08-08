@@ -52,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 2px solid #1a1a1a;
+  border-top: 3px solid #08204f;
 }
 
 .openConversationText {
@@ -66,9 +66,10 @@
 }
 
 .chatMessageInput {
+  resize: none;
   width: 100%;
-  height: fit-content;
-  padding: 15px 10px 0;
+  height: 50px;
+  padding: 10px 10px;
   margin: 15px 30px auto 30px;
   background-color: #303030;
   border-radius: 3px;

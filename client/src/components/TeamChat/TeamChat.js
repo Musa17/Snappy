@@ -143,6 +143,31 @@ const TeamChat = () => {
             leave={true}
             onLeave={() => leaveHandler()}
           />
+          {active === "Chat" && (
+            <div className="chatBoxTop">
+              {messages.map((message, i) => (
+                <div key={message._id ? message._id : i} ref={scrollRef}>
+                </div>
+              ))}
+            </div>
+          )}
+          {active === "Chat" && (
+            <div className="chatBoxBottom">
+              <textarea
+                className="chatMessageInput"
+                placeholder="Type a new message"
+                onChange={(e) => setNewMessage(e.target.value)}
+                value={newMessage}
+              />
+            </div>
+          )}
+          {active === "Chat" && (
+            <div className="messageSendBtn">
+              <div className="submitButton">
+                <img src={SendImg} alt="Send" />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
