@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
+import Message from "../Chatting/Message/Message";
 import * as chatApi from "../../api/chatting";
 import { UserContext } from "../../App";
 import io from "socket.io-client";
@@ -76,6 +77,44 @@ const TeamChat = () => {
       });
   }, [teamId]);
 
+  // Check if the message is user's own
+  const checkOwn = (id) => {
+    return id === state._id;
+  };
+  // When a new message is send
+  const onSubmitHandler = (e) => {
+    if (!newMessage) {
+      return;
+    }
+    const message = {
+      senderId: state._id,
+      text: newMessage,
+      teamId,
+    };
+    // message send to the server to check
+    chatApi
+      .newMessageTeams(message)
+      .then((result) => {
+        setMessages([...messages, result.data.data]);
+        setNewMessage("");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast(
+          `${
+            err.response && err.response.data
+              ? err.response.data.message
+              : "Something went wrong."
+          }`
+        );
+      });
+    // send message to the server so that it can be broadcasted to all the user in the room
+    socket.current.emit("sendMessageToTeams", {
+      senderId: state._id,
+      text: newMessage,
+    });
+  };
+
   useEffect(() => {
     // When a message is recieved
     socket.current.on("getMessageFromTeams", (data) => {
@@ -147,6 +186,10 @@ const TeamChat = () => {
             <div className="chatBoxTop">
               {messages.map((message, i) => (
                 <div key={message._id ? message._id : i} ref={scrollRef}>
+                  <Message
+                    own={checkOwn(message.sender._id)}
+                    message={message}
+                  />
                 </div>
               ))}
             </div>
@@ -163,7 +206,7 @@ const TeamChat = () => {
           )}
           {active === "Chat" && (
             <div className="messageSendBtn">
-              <div className="submitButton">
+              <div onClick={() => onSubmitHandler()} className="submitButton">
                 <img src={SendImg} alt="Send" />
               </div>
             </div>
