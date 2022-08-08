@@ -1,12 +1,19 @@
 import React, { useContext, useState } from "react";
 import { Dropdown } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../../../App";
 import SnappyLogo from "../../../assets/images/SnappyLogo.png";
+import SearchResults from "./SearchResults/SearchResult";
 import "./HeadBar.css";
 
 const HeadBar = (props) => {
   const { state, dispatch } = useContext(UserContext);
   const [search, setSearch] = useState("");
+  const history = useHistory();
+  console.log(search);
+
+  // function to clear the search
+  const clearResultHandler = () => setSearch();
 
   return (
     <div className="headBar">
@@ -29,6 +36,12 @@ const HeadBar = (props) => {
             onChange={(e) => setSearch(e.target.value)}
             value={search}
           />
+          {search && (
+            <SearchResults
+              search={search}
+              onClearHandler={clearResultHandler}
+            />
+          )}
           {state && (
             <div className="headerBarProfile">
               <Dropdown>
