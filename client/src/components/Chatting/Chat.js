@@ -4,7 +4,7 @@ import * as chatApi from "../../api/chatting";
 import { UserContext } from "../../App";
 import io from "socket.io-client";
 import { mainUrl } from "../../api/index";
-import SidebarHeading from "../General/sidebarHeading/sidebarHeading";
+import SidebarHeading from "../General/SidebarHeading/SidebarHeading";
 import SendImg from "../../assets/images/TextBox/send.png";
 import { ToastContainer, toast } from "react-toastify";
 import Loading from "../General/Loading/Loading";

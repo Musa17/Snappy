@@ -19,6 +19,7 @@ import Login from "./components/Authentication/Login/Login";
 import Teams from "./components/Teams/Teams";
 import CreateTeamsPage from "./components/Teams/CreateTeamPage/CreateTeamsPage";
 import Chat from "./components/Chatting/Chat";
+import TeamsChat from "./components/TeamChat/TeamChat";
 import HeadBar from "./components/Navbars/HeadBar/HeadBar";
 import SideNavbar from "./components/Navbars/SideNavbar/SideNavbar";
 import { initialState, reducer } from "./reducer/userReducer";
@@ -78,6 +79,11 @@ const Routing = () => {
         {(state || user) && (
           <Route path="/createTeams">
             <CreateTeamsPage />
+          </Route>
+        )}
+        {(state || user) && (
+          <Route path="/teams/:teamId">
+            <TeamsChat />
           </Route>
         )}
         {!state && !user && (

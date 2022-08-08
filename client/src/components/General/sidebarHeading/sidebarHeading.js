@@ -1,5 +1,5 @@
 import React from "react";
-import "./sidebarHeading.css";
+import "./SidebarHeading.css";
 
 // Sidebar in chats
 const SidebarHeading = (props) => {
