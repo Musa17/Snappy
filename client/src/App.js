@@ -21,6 +21,7 @@ import CreateTeamsPage from "./components/Teams/CreateTeamPage/CreateTeamsPage";
 import Chat from "./components/Chatting/Chat";
 import TeamsChat from "./components/TeamChat/TeamChat";
 import NewChat from "./components/NewChat/NewChat";
+import Contacts from "./components/Contacts/Contacts";
 import HeadBar from "./components/Navbars/HeadBar/HeadBar";
 import SideNavbar from "./components/Navbars/SideNavbar/SideNavbar";
 import { initialState, reducer } from "./reducer/userReducer";
@@ -90,6 +91,11 @@ const Routing = () => {
         {(state || user) && (
           <Route path="/newChat/:userId/:userName">
             <NewChat />
+          </Route>
+        )}
+        {(state || user) && (
+          <Route path="/contacts">
+            <Contacts />
           </Route>
         )}
         {!state && !user && (
