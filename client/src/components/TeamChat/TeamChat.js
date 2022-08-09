@@ -10,6 +10,7 @@ import TeamLeftSide from "./TeamLeftSide/TeamLeftSide";
 import SendImg from "../../assets/images/TextBox/send.png";
 import ChatBar from "../General/ChatBar/ChatBar";
 import { ToastContainer, toast } from "react-toastify";
+import Notes from "../Notes/Notes";
 import Loading from "../General/Loading/Loading";
 
 const TeamChat = () => {
@@ -211,6 +212,7 @@ const TeamChat = () => {
               </div>
             </div>
           )}
+          {active === "Notes" && <Notes teamsId={teamId} />}
         </div>
       </div>
     </div>

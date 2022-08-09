@@ -62,7 +62,7 @@
   margin-right: 20px;
   margin-top: 10px;
   font-weight: 500;
-  background: rgb(146, 18, 13);
+  background: rgb(164, 13, 8);
   padding: 5px 20px;
   border-radius: 4px;
   font-size: 14px;
@@ -145,10 +145,18 @@
 }
 
 .tabs div {
-  padding: 16px 10px;
+  padding: 12px 10px;
   cursor: pointer;
   font-size: 16px;
   height: 100%;
+}
+
+#chatTab {
+  margin-top: 10px;
+}
+
+#notesTab {
+  margin-top: 10px;
 }
 
 .active {

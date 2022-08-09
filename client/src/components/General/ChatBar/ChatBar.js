@@ -76,10 +76,18 @@ const ChatBar = (props) => {
         {props.tabs && (
           <div className="tabs">
             <div
+              id="chatTab"
               className={props.active === "Chat" && "active"}
               onClick={() => props.onChangeTab("Chat")}
             >
               Chat
+            </div>
+            <div
+              id="notesTab"
+              className={props.active === "Notes" && "active"}
+              onClick={() => props.onChangeTab("Notes")}
+            >
+              Notes
             </div>
           </div>
         )}
