@@ -1,0 +1,115 @@
+.modal-content {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  pointer-events: auto !important;
+  border: 1px solid rgba(0,0,0,.2) !important;
+  border-radius: 0.3rem !important;
+  outline: 0 !important;
+  background-color: unset !important;
+  background-clip: unset !important;
+}
+
+.createTeamsNotesBtn {
+  background-color: #152b59 !important;
+  float: right;
+  border: 3px solid rgb(210, 210, 210) !important;
+  margin: 10px 45px 10px 10px !important;
+  width: fit-content;
+  box-shadow: 0px 0px 3px 1px #152b59;
+}
+
+.createTeamsNotesBtn:hover {
+  background-color: #5a5de7 !important;
+  border-color: #5a5de7 !important;
+}
+
+.createTeamsNotesBtn:focus {
+  box-shadow: none !important;
+}
+
+.modal-backdrop {
+  background-color: #333 !important;
+}
+
+.modalCreateNotesBody {
+  background-color: #252525;
+  color: #fff;
+  box-shadow: 0px 7px 20px 3px #161616;
+  border: none !important;
+  height: 100%;
+}
+
+.modalCreateNotesBody {
+  display: flex;
+  flex-direction: column;
+  padding: 30px !important;
+}
+
+.modalCreateNotesBodyHeading {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.modalCreateNotesBodyPara {
+  font-size: 15px;
+  padding-bottom: 25px;
+}
+
+.inputCreateNoteLabel {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.inputCreateNote {
+  background-color: inherit;
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
+  color: #fff;
+  padding: 7px 10px;
+  resize: none;
+}
+
+.inputCreateNote:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #7f81e1 !important;
+}
+
+.modalCreateNotesBodyBtns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalCreateNotesBodyCancelBtn {
+  border: 1px solid #aaa !important;
+  background-color: #222 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 5px 20px !important;
+  border-radius: 2px !important;
+}
+
+.modalCreateNotesBodyCancelBtn:focus {
+  box-shadow: none !important;
+}
+
+.modalCreateNotesBodySubmit {
+  border: 1px solid #7f81e1 !important;
+  background-color: #7f81e1 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 5px 20px !important;
+  margin-left: 10px;
+  border-radius: 2px !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .createTeamsNotesBtn {
+    margin: 70px 45px 10px 10px !important;
+  }
+}

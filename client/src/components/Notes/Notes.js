@@ -3,13 +3,13 @@ import CreateNotesModal from "./CreateNotesModal/CreateNotesModal";
 import "./Notes.css";
 import * as noteApi from "../../api/note";
 import { ToastContainer, toast } from "react-toastify";
+import ViewNote from "./ViewNote/ViewNote";
 
 // import
 
 const Notes = (props) => {
   const [newNotes, setNewNotes] = useState();
   const [notes, setNotes] = useState([]);
-  const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
     // Function to get all notes for the team
@@ -50,7 +50,9 @@ const Notes = (props) => {
             : "allNotesFullWidth"
         }
       >
-        {/* view notes */}
+        {notes.map((note) => (
+          <ViewNote note={note} />
+        ))}
       </div>
     </div>
   );
