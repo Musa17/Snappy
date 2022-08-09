@@ -37,7 +37,10 @@ const removeUser = (socketId) => {
 };
 
 // The Function to get user from user Array
-const getUser = (userId) => users.find((user) => user.userId === userId);
+const getUser = (userId) => {
+  const user = users.find((user) => user.userId === userId);
+  return user;
+}
 
 // This function is exported
 module.exports = (io) => {

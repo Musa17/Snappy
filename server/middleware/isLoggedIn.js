@@ -22,7 +22,6 @@ module.exports = (req, res, next) => {
     const { data } = payload;
     User.findById(data).then((userData) => {
       req.user = userData;
-      console.log(req.user);
       next();
     });
   });

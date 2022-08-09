@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Chat.css";
+import Conversation from "./Conversations/Conversations";
+import Message from "./Message/Message";
 import * as chatApi from "../../api/chatting";
 import { UserContext } from "../../App";
 import io from "socket.io-client";
 import { mainUrl } from "../../api/index";
 import SidebarHeading from "../General/SidebarHeading/SidebarHeading";
 import SendImg from "../../assets/images/TextBox/send.png";
+import ChatBar from "../General/ChatBar/ChatBar";
 import { ToastContainer, toast } from "react-toastify";
 import Loading from "../General/Loading/Loading";
 
@@ -148,7 +151,11 @@ const Chat = () => {
             <SidebarHeading heading="Chat" />
             {/* <input placeholder="Search for friends" className="chatMenuInput" /> */}
             <div className="chatMenuScroll">
-              {/* conversation */}
+              {conversations.map((chat) => (
+                <div key={chat._id} onClick={() => setCurrentChat(chat)}>
+                  <Conversation conversation={chat} currentUser={state} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -157,9 +164,21 @@ const Chat = () => {
         <div className="chatBox">
           {currentChat ? (
             <div className="chatBoxWrapper">
-              {/* chat bar */}
+              <ChatBar
+                conversation={currentChat}
+                currentUser={state}
+                video={true}
+                onGoBack={() => setCurrentChat(null)}
+              />
               <div className="chatBoxTop">
-                {/* messages */}
+                {messages.map((message, i) => (
+                  <div key={message._id ? message._id : i} ref={scrollRef}>
+                    <Message
+                      own={checkOwn(message.sender._id)}
+                      message={message}
+                    />
+                  </div>
+                ))}
               </div>
               <div className="chatBoxBottom">
                 <textarea

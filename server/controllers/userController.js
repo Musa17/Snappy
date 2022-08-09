@@ -111,7 +111,6 @@ exports.login = async (req, res) => {
           message: "Incorrect email or password",
         });
       }
-      console.log(foundUser);
 
       res.status(200).json({
         success: "true",
