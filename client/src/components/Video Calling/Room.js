@@ -15,6 +15,8 @@ import Mute from "../../assets/images/VideoCalling/mute.png";
 import Unmute from "../../assets/images/VideoCalling/unmute.png";
 import VideoOn from "../../assets/images/VideoCalling/videoOn.png";
 import VideoOff from "../../assets/images/VideoCalling/videoOff.png";
+import ScreenShareOn from "../../assets/images/VideoCalling/screenShareOn.png";
+import ScreenShareOff from "../../assets/images/VideoCalling/screenShareOff.png";
 import Leave from "../../assets/images/VideoCalling/end-call.png";
 import "./Room.css";
 import Loading from "./../General/Loading/Loading";
@@ -64,8 +66,11 @@ const Video = (props) => {
 
 const Room = (props) => {
   const [peers, setPeers] = useState([]);
+  const [screenShare, setScreenShare] = useState(false);
   const socketRef = useRef(io(mainUrl));
   const userVideo = useRef();
+  const userStream = useRef();
+  const screenTrackRef = useRef();
   const peersRef = useRef([]);
   const roomID = props.match.params.roomID;
   const history = useHistory();
@@ -124,9 +129,7 @@ const Room = (props) => {
     });
   }, []);
 
-  const joinPerrHandler = (newPeers) => {
-    console.log(newPeers);
-
+  const joinPeerHandler = (newPeers) => {
     setPeers(newPeers);
   };
 
@@ -148,6 +151,7 @@ const Room = (props) => {
 
         // Adding the stream to the userVideo Ref
         userVideo.current.srcObject = stream;
+        userStream.current = stream;
 
         // when the user connects it joins the room (client to server)
         socketRef.current.emit(
@@ -179,7 +183,7 @@ const Room = (props) => {
               name: user.name,
             });
           });
-          joinPerrHandler(peers);
+          joinPeerHandler(peers);
         });
 
         // When a new user joins the video calling room
@@ -287,9 +291,51 @@ const Room = (props) => {
 
   // When the user toggles the audio
   const toggleAudio = () => {
-    userVideo.current.srcObject.getAudioTracks()[0].enabled =
+    userStream.current.getAudioTracks()[0].enabled =
       !constraints.audio;
     setConstraints((prev) => ({ ...prev, audio: !prev.audio }));
+  };
+
+  const toggleScreenShare = () => {
+    if (!screenShare) {
+      navigator.mediaDevices
+        .getDisplayMedia({ cursor: true })
+        .then((stream) => {
+          const screenTrack = stream.getTracks()[0];
+
+          peersRef.current.forEach(({ peer }) => {
+            // replaceTrack (oldTrack, newTrack, oldStream);
+            peer.replaceTrack(
+              peer.streams[0]
+                .getTracks()
+                .find((track) => track.kind === 'video'),
+              screenTrack,
+              userStream.current
+            );
+          });
+
+          // Listen click end
+          screenTrack.onended = () => {
+            peersRef.current.forEach(({ peer }) => {
+              peer.replaceTrack(
+                screenTrack,
+                peer.streams[0]
+                  .getTracks()
+                  .find((track) => track.kind === 'video'),
+                  userStream.current
+              );
+            });
+            userVideo.current.srcObject = userStream.current;
+            setScreenShare(false);
+          };
+
+          userVideo.current.srcObject = stream;
+          screenTrackRef.current = screenTrack;
+          setScreenShare(true);
+        });
+    } else {
+      screenTrackRef.current.onended();
+    }
   };
 
   if (isLoading) return <Loading />;
@@ -304,6 +350,12 @@ const Room = (props) => {
             <div className="controlVideo" onClick={toggleVideo}>
               <img
                 src={constraints.video ? VideoOn : VideoOff}
+                alt="video off"
+              />
+            </div>
+            <div className="controlVideo" onClick={toggleScreenShare}>
+              <img
+                src={screenShare ? ScreenShareOff : ScreenShareOn}
                 alt="video off"
               />
             </div>
