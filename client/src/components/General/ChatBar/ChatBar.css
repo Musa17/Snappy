@@ -72,6 +72,18 @@
   cursor: pointer;
 }
 
+.CharBarRight {
+  display: flex;
+  align-items: center;
+}
+
+.CharBarVideoCalling {
+  margin-right: 35px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
 .codeBtn {
   margin-left: 10px;
   margin-top: 10px;

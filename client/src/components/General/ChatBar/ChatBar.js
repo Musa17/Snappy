@@ -117,6 +117,24 @@ const ChatBar = (props) => {
         )}
       </div>
       <div className="ChatBarLeaveTeam">
+        {props.video && (
+          <div className="CharBarRight">
+            <div
+              className="CharBarVideoCalling"
+              onClick={() => {
+                if (props.conversation)
+                  history.push(`/room/${props.conversation._id}`);
+                else history.push(`/room/${props.team._id}`);
+              }}
+            >
+              <img
+                src={VideoCameraImg}
+                alt="video"
+                style={{ cursor: "pointer" }}
+              />
+            </div>
+          </div>
+        )}
         {props.leave && (
           <div className="leaveTeam" onClick={() => props.onLeave()}>
             Leave

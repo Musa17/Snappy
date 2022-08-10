@@ -22,6 +22,7 @@ import Chat from "./components/Chatting/Chat";
 import TeamsChat from "./components/TeamChat/TeamChat";
 import NewChat from "./components/NewChat/NewChat";
 import Contacts from "./components/Contacts/Contacts";
+import Room from "./components/Video Calling/Room";
 import HeadBar from "./components/Navbars/HeadBar/HeadBar";
 import SideNavbar from "./components/Navbars/SideNavbar/SideNavbar";
 import { initialState, reducer } from "./reducer/userReducer";
@@ -68,6 +69,7 @@ const Routing = () => {
       {(state || user) && <HeadBar />}
       {(state || user) && <SideNavbar />}
       <Switch>
+        {(state || user) && <Route path="/room/:roomID" component={Room} />}
         {(state || user) && (
           <Route path="/chat">
             <Chat />
@@ -113,8 +115,8 @@ const Routing = () => {
             <Home />
           </Route>
         )}
-        {/*(state || user) && <Redirect to="/teams" exact />*/}
-        {/*!state && !user && <Redirect to="/home" exact />*/}
+        {(state || user) && <Redirect to="/teams" exact />}
+        {!state && !user && <Redirect to="/home" exact />}
       </Switch>
     </React.Fragment>
   );
