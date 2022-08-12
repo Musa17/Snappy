@@ -52,6 +52,16 @@ const HeadBar = (props) => {
                   className="headerBarProfileImg"
                   variant="success"
                   id="dropdown-basic"
+                  onMouseOver={() => { 
+                    let button = document.getElementById("dropdown-basic");
+                    button.style.setProperty("background-color", "#494a8c", "important");
+                    button.style.setProperty("border-color", "#494a8c", "important");
+                  }}
+                  onMouseOut={() => { 
+                    let button = document.getElementById("dropdown-basic");
+                    button.style.backgroundColor = "#7f81e1";
+                    button.style.borderColor = "#7f81e1";
+                  }}
                 >
                   {state.name.match(/\b(\w)/g).join("")}
                 </Dropdown.Toggle>

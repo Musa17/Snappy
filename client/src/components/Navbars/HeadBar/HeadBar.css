@@ -18,8 +18,8 @@
 }
 
 .SnappyLogo {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   margin-left: 25px;
 }
 
@@ -66,10 +66,6 @@
   margin-right: 30px;
   padding: 6px;
   border-radius: 5px;
-}
-
-.headerBarProfile:hover {
-  background-color: #15377a;
 }
 
 .headerBarProfileImg {

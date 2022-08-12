@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import UserIcon from "../../../assets/images/Teams/user.jpg";
+import CreateGroupIcon from "../../../assets/images/Teams/createGroup.png";
 import "./CreateTeams.css";
 import { UserContext } from "../../../App";
 import * as chatApi from "../../../api/chatting";
@@ -34,7 +35,9 @@ const CreateTeams = (props) => {
   return (
     <div className="createTeams">
       <ToastContainer />
-      <div className="createTeamsProfile"></div>
+      <div className="createTeamsProfile">
+        <img className="createTeamsProfileImage" src={CreateGroupIcon}/>
+      </div>
       <div className="createTeamsHeading">Create a Teams</div>
       <div>
         <img className="createTeamsProfileImg" src={UserIcon} alt="" />

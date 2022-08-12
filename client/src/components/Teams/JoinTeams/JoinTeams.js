@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import "./JoinTeams.css";
+import JoinGroupIcon from "../../../assets/images/Teams/joinGroup.png";
 import * as chatApi from "../../../api/chatting";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../../App";
@@ -42,7 +43,9 @@ const JoinTeams = (props) => {
   return (
     <div className="createTeams">
       <ToastContainer />
-      <div className="createTeamsProfile"></div>
+      <div className="createTeamsProfile">
+        <img className="createTeamsProfileImage" src={JoinGroupIcon}/>
+      </div>
       <div className="createTeamsHeading">Join a team with a code</div>
       <div>
         <input
