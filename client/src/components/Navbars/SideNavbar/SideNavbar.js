@@ -33,47 +33,76 @@ const SideNavbar = (props) => {
     >
       <div className="sideNavItems">
         <div
-          className={"sideNavlink"}
+          className={active === "Chat" ? "activeLink" : "sideNavlink"}
           onClick={(e) => {
             history.push("/chat");
             setActive("Chat");
           }}
+          onMouseOver={() => { 
+            let img = document.getElementById("chatImage");
+            if(active !== "Chat")
+              img.src = ChatHoverImg;
+          }}
+          onMouseOut={() => { 
+            let img = document.getElementById("chatImage");
+            if(active !== "Chat")
+              img.src = ChatImg;
+          }}
         >
-          <div className={active === "Chat" && "activeLink"}>
-            <img src={active === "Chat" ? ChatHoverImg : ChatImg} alt="chat" />
-          </div>
+          <img 
+            id="chatImage"
+            className="currentSideBarIcon"
+            src={active === "Chat" ? ChatHoverImg : ChatImg}
+            alt="chat"/>
           <div className={active === "Chat" && "activeSideNavLink"}>Chat</div>
         </div>
         <div
-          className="sideNavlink"
+          className={active === "Teams" ? "activeLink" : "sideNavlink"}
           onClick={(e) => {
             history.push("/teams");
             setActive("Teams");
           }}
+          onMouseOver={() => { 
+            let img = document.getElementById("teamsImage");
+            if(active !== "Teams")
+              img.src = TeamsHoverImg;
+          }}
+          onMouseOut={() => { 
+            let img = document.getElementById("teamsImage");
+            if(active !== "Teams")
+              img.src = TeamsImg;
+          }}
         >
-          <div className={active === "Teams" && "activeLink"}>
-            <img
-              className="currentSideBarIcon"
-              src={active === "Teams" ? TeamsHoverImg : TeamsImg}
-              alt="teams"
-            />
-          </div>
+          <img
+            id="teamsImage"
+            className="currentSideBarIcon"
+            src={active === "Teams" ? TeamsHoverImg : TeamsImg}
+            alt="teams"
+          />
           <div className={active === "Teams" && "activeSideNavLink"}>Teams</div>
         </div>
         <div
-          className="sideNavlink"
+          className={active === "Contacts" ? "activeLink" : "sideNavlink"}
           onClick={(e) => {
             history.push("/contacts");
             setActive("Contacts");
           }}
-        >
-          <div className={active === "Contacts" && "activeLink"}>
+          onMouseOver={() => { 
+            let img = document.getElementById("contactsImage");
+            if(active !== "Contacts")
+              img.src = FilesHoverImg;
+          }}
+          onMouseOut={() => { 
+            let img = document.getElementById("contactsImage");
+            if(active !== "Contacts")
+              img.src = FilesImg;
+          }}>
             <img
               alt="contacts"
+              id="contactsImage"
               className="currentSideBarIcon"
-              src={active === "Contacts" ? FilesHoverImg : FilesImg}
+              src={active === "Contacts" ? FilesHoverImg : FilesImg} 
             />
-          </div>
           <div className={active === "Contacts" && "activeSideNavLink"}>
             Contacts
           </div>

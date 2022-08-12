@@ -48,7 +48,7 @@
 
 .headerBarSearchInput {
   width: 65%;
-  /* height: 25px; */
+  height: 40px;
   background-color: #073980;
   border: none;
   outline: none;
@@ -63,7 +63,13 @@
 }
 
 .headerBarProfile {
-  padding-right: 30px;
+  margin-right: 30px;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.headerBarProfile:hover {
+  background-color: #15377a;
 }
 
 .headerBarProfileImg {
@@ -72,7 +78,7 @@
   background-color: #7f81e1 !important;
   border-color: #7f81e1 !important;
   border-radius: 50% !important;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -140,6 +146,10 @@
   font-weight: 500;
   color: #ddd;
   cursor: pointer;
+}
+
+.signout:hover {
+  background-color: #164e9d;
 }
 
 @media only screen and (max-width: 862px) {

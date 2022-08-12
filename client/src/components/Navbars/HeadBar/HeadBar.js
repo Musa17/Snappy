@@ -19,7 +19,9 @@ const HeadBar = (props) => {
     <div className="headBar">
       {window.innerWidth > 862 && (
         <div className="headBarBox">
+          <a href="/">
           <img className="SnappyLogo" src={SnappyLogo} alt="logo" />{" "}
+          </a>
         </div>
       )}
       <div className="headSubBarBox">
@@ -42,7 +44,8 @@ const HeadBar = (props) => {
               onClearHandler={clearResultHandler}
             />
           )}
-          {state && (
+        </div>
+        {state && (
             <div className="headerBarProfile">
               <Dropdown>
                 <Dropdown.Toggle
@@ -81,7 +84,6 @@ const HeadBar = (props) => {
               </Dropdown>
             </div>
           )}
-        </div>
       </div>
     </div>
   );
