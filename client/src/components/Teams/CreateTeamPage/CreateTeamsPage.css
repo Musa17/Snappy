@@ -19,7 +19,7 @@
 }
 
 .createTeamsList, .createTeamsListFullWidth {
-  min-height: 100vh;
+  min-height: 500px;
   background-color: #1e3e7d;
   color: #fff;
   display: flex;
@@ -27,8 +27,8 @@
 }
 
 .createTeamsList {
-  margin-left: 65px;
-  padding: 70px 20px 20px;
+  padding: 20px 20px;
+  justify-content: center;
 }
 
 .teamsNav {

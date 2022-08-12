@@ -39,7 +39,7 @@
 }
 
 .createTeamsList, .createTeamsListFullWidth {
-  min-height: 100vh;
+  min-height: 720px;
   background-color: #1e3e7d;
   color: #fff;
   display: flex;
@@ -47,7 +47,7 @@
 }
 
 .createTeamsList {
-  margin-left: 65px;
+  /*margin-left: 65px;*/
   padding: 70px 20px 20px;
 }
 
@@ -64,7 +64,7 @@
 
 .joinOrCreateTeamsBtn:hover {
   border: 3px solid rgb(210, 210, 210);
-  background: #152b59;
+  background-color: #1a3264;
   margin: 1.1%;
 }
 

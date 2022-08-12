@@ -2,7 +2,7 @@
   width: 22.8%;
   margin: 1.1%;
   /*background-color: #012169;*/
-  background-color: #0d2c6b;
+  background: #152b59;
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -15,7 +15,7 @@
 }
 
 .teamBoxPic:hover {
-  background-color: #0d2c6b;
+  background-color: #1a3264;
   border: 3px solid rgb(210, 210, 210);
 }
 

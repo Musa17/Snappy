@@ -37,7 +37,7 @@
 }
 
 .ContactItem {
-  width: 250px;
+  width: 270px;
   padding: 10px;
   cursor: pointer;
   display: flex;
@@ -45,6 +45,7 @@
   justify-items: center;
   align-items: center;
   background-color: #0d2c6b;
+  border: 3px solid rgb(210, 210, 210, 0);
 }
 
 .ContactItem:last-child {
@@ -52,7 +53,8 @@
 }
 
 .ContactItem:hover {
-  background-color: #0d2c6b;
+  background-color: #103277;
+  border: 3px solid rgb(210, 210, 210);
 }
 
 .ContactImg {

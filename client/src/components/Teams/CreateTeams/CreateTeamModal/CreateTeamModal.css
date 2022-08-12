@@ -1,7 +1,8 @@
 .createTeamsModalBtn {
-  background-color: #7f81e1 !important;
+  background-color: #5456d9 !important;
   outline: none;
-  border-color: #7f81e1 !important;
+  border: none !important;
+  /*border-color: #7f81e1 !important;*/
   color: #fff;
   padding: 7px 25px !important;
   font-weight: 700 !important;
@@ -9,8 +10,8 @@
 }
 
 .createTeamsModalBtn:hover {
-  background-color: #5a5de7 !important;
-  border-color: #5a5de7 !important;
+  background-color: #4647ac !important;
+  /*border-color: #5a5de7 !important;*/
 }
 
 .createTeamsModalBtn:focus {
@@ -22,20 +23,21 @@
 }
 
 .modalCreateTeamsBody {
-  background-color: #252525;
+  background-color: #152b59;
   color: #fff;
-  box-shadow: 0px 7px 20px 3px #161616;
+  box-shadow: 0px 7px 20px 3px #141841;
   border: none !important;
+  border-radius: 5px;
 }
 
 .modalCreateTeamsBody {
   display: flex;
   flex-direction: column;
-  padding: 30px !important;
+  padding: 50px !important;
 }
 
 .modalCreateTeamsBodyHeading {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   padding-bottom: 20px;
 }
@@ -51,6 +53,7 @@
 }
 
 .inputCreateTeam {
+  height: 40px;
   background-color: inherit;
   outline: none;
   border: none;
@@ -58,6 +61,12 @@
   margin-bottom: 20px;
   color: #fff;
   padding: 7px 10px;
+  border-bottom: 2px solid rgb(30, 31, 63);
+  resize: none;
+}
+
+.inputCreateTeam::placeholder {
+  color: #B0C4DE;
 }
 
 .inputCreateTeam:focus {
@@ -72,24 +81,28 @@
 }
 
 .modalCreateTeamsBodyCancelBtn {
-  border: 1px solid #aaa !important;
-  background-color: #222 !important;
+  border: none !important;
+  background-color: rgb(129, 18, 18) !important;
   font-size: 15px !important;
   font-weight: 700 !important;
   padding: 5px 20px !important;
   border-radius: 2px !important;
 }
 
-.modalCreateTeamsBodyCancelBtn:focus {
-  box-shadow: none !important;
+.modalCreateTeamsBodyCancelBtn:hover {
+  background-color: rgb(113, 17, 17) !important;
 }
 
 .modalCreateTeamsBodySubmit {
-  border: 1px solid #7f81e1 !important;
-  background-color: #7f81e1 !important;
+  border: none !important;
+  background-color: #5456d9 !important;
   font-size: 15px !important;
   font-weight: 700 !important;
   padding: 5px 20px !important;
   margin-left: 10px;
   border-radius: 2px !important;
+}
+
+.modalCreateTeamsBodySubmit:not(:disabled):not(.disabled):hover{
+  background-color: #4647ac !important;
 }

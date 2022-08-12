@@ -62,6 +62,7 @@ const MyVerticallyCenteredModal = (props) => {
           <input
             className="inputCreateTeam"
             type="text"
+            placeholder="Team Name"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />

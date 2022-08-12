@@ -1,14 +1,23 @@
 .JoinTeams {
   background-color: inherit;
   outline: none;
-  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgb(30, 31, 63);
   width: 220px;
   padding: 10px;
   color: #eee;
 }
+
+.JoinTeams::placeholder {
+  color: #B0C4DE;
+}
+
 .JoinTeams:hover {
   background-color: #1f1f1f;
 }
+
 .JoinTeams:focus {
   border-bottom: 2px solid #7f81e1;
   background-color: #1f1f1f;
