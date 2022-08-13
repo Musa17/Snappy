@@ -359,7 +359,7 @@ const Room = (props) => {
                 alt="video off"
               />
             </div>
-            <div className="controlVideo " onClick={leaveMeeting}>
+            <div className="leaveVideo " onClick={leaveMeeting}>
               <div className="leave">
                 <img src={Leave} alt="video off" /> Leave
               </div>

@@ -44,20 +44,42 @@
   cursor: pointer;
 }
 
+.controlVideo:hover {
+  background-color: #16387b;
+}
+
+.leaveVideo {
+  height: 36px;
+  /*padding: 10px 15px;*/
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-items: center;
+  flex-direction: row;
+}
+
 .leave {
   font-size: 14px;
-  background-color: rgb(173, 16, 16);
+  background: rgb(164, 13, 8);
   /* margin: 10px; */
+  font-weight: 500;
   padding: 5px 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: 3px solid rgb(255, 255, 255, 0);
+}
+
+.leave:hover {
+  border: 3px solid rgb(255, 255, 255);
+  background-color: rgb(134, 13, 8);
 }
 
 .leave img {
-  padding-right: 8px;
-  width: 28px;
+  padding-right: 10px;
+  width: 35px;
 }
 
 .videoFor1 {
