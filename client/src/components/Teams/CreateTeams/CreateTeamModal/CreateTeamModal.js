@@ -58,7 +58,7 @@ const MyVerticallyCenteredModal = (props) => {
           based on project, initiative, or common interest.
         </div>
         <div>
-          <div className="inputCreateTeamLabel">Team Name</div>
+          <div className="inputCreateTeamLabel">Team Name :</div>
           <input
             className="inputCreateTeam"
             type="text"
@@ -68,7 +68,7 @@ const MyVerticallyCenteredModal = (props) => {
           />
         </div>
         <div>
-          <div className="inputCreateTeamLabel">Description</div>
+          <div className="inputCreateTeamLabel">Description :</div>
           <textarea
             className="inputCreateTeam"
             placeholder="Let people know what team is this about"

@@ -62,6 +62,16 @@
   color: #B0C4DE;
 }
 
+.headerBarSearchInput:focus {
+  outline: none;
+  border: none;
+  background-color: #063372;
+}
+
+.headerBarSearchInput:hover{
+  background-color: #063372;
+}
+
 .headerBarProfile {
   margin-right: 30px;
   padding: 6px;

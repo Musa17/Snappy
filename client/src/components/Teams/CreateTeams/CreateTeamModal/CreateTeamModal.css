@@ -2,16 +2,17 @@
   background-color: #5456d9 !important;
   outline: none;
   border: none !important;
-  /*border-color: #7f81e1 !important;*/
   color: #fff;
   padding: 7px 25px !important;
   font-weight: 700 !important;
   border-radius: 3px !important;
+  border: 3px solid rgba(210, 210, 210, 0) !important;
+  transition: none !important;
 }
 
 .createTeamsModalBtn:hover {
   background-color: #4647ac !important;
-  /*border-color: #5a5de7 !important;*/
+  border: 3px solid rgba(210, 210, 210) !important;
 }
 
 .createTeamsModalBtn:focus {
@@ -28,9 +29,6 @@
   box-shadow: 0px 7px 20px 3px #141841;
   border: none !important;
   border-radius: 5px;
-}
-
-.modalCreateTeamsBody {
   display: flex;
   flex-direction: column;
   padding: 50px !important;
@@ -63,6 +61,8 @@
   padding: 7px 10px;
   border-bottom: 2px solid rgb(30, 31, 63);
   resize: none;
+  border-radius: 2px;
+  background-color: #12244d;
 }
 
 .inputCreateTeam::placeholder {
@@ -72,7 +72,12 @@
 .inputCreateTeam:focus {
   outline: none;
   border: none;
+  background-color: #0f1e42;
   border-bottom: 2px solid #7f81e1 !important;
+}
+
+.inputCreateTeam:not(:focus):hover {
+  background-color: #0f1e42;
 }
 
 .modalCreateTeamsBodyBtns {
@@ -87,10 +92,13 @@
   font-weight: 700 !important;
   padding: 5px 20px !important;
   border-radius: 2px !important;
+  border: 3px solid rgba(210, 210, 210, 0) !important;
+  transition: none !important;
 }
 
 .modalCreateTeamsBodyCancelBtn:hover {
   background-color: rgb(113, 17, 17) !important;
+  border: 3px solid rgba(210, 210, 210) !important;
 }
 
 .modalCreateTeamsBodySubmit {
@@ -101,8 +109,11 @@
   padding: 5px 20px !important;
   margin-left: 10px;
   border-radius: 2px !important;
+  border: 3px solid rgba(210, 210, 210, 0) !important;
+  transition: none !important;
 }
 
 .modalCreateTeamsBodySubmit:not(:disabled):not(.disabled):hover{
   background-color: #4647ac !important;
+  border: 3px solid rgba(210, 210, 210) !important;
 }

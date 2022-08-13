@@ -88,6 +88,7 @@
 
 .chatTab:hover {
   border-bottom: 3px solid #97a4ca;
+  color: #fff;
 }
 
 .noteTab:hover {

@@ -9,16 +9,16 @@ const ModalFunction = (props) => {
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
-      className="modalCreateNotes"
+      className="modalViewNotes"
       centered
     >
-      <Modal.Body closeButton className="modalCreateNotesBody">
-        <div className="modalCreateNotesBodyHeading">{props.note.heading}</div>
+      <Modal.Body closeButton className="modalViewNotesBody">
+        <div className="modalViewNotesBodyHeading">{props.note.heading}</div>
         <div></div>
         <div>{props.note.description}</div>
-        <div className="modalCreateNotesBodyBtns">
+        <div className="modalViewNotesBodyBtns">
           <Button
-            className="modalCreateNotesBodyCancelBtn"
+            className="modalViewNotesBodyCancelBtn"
             onClick={props.onHide}
           >
             Cancel

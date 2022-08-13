@@ -65,6 +65,7 @@ const MyVerticallyCenteredModal = (props) => {
           <input
             className="inputCreateNote"
             type="text"
+            placeholder="Note Heading"
             onChange={(e) => setHeading(e.target.value)}
             value={heading}
           />

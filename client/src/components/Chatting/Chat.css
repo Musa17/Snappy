@@ -71,18 +71,19 @@
   height: 50px;
   padding: 10px 10px;
   margin: 15px 30px auto 30px;
-  background-color: #1d3056;
+  background-color: #20355e;
   border-radius: 3px;
   border: none;
   display: flex;
   align-items: center;
   color: #fff;
-  border-bottom: 3px solid #1d3056;
+  border-bottom: 3px solid #20355e;
 }
 
 .chatMessageInput:focus {
   outline: none;
   border-bottom: 3px solid #7375e7;
+  background-color: #1d3056;
 }
 
 .chatMessageInput::placeholder {
@@ -90,7 +91,8 @@
 }
 
 .chatMessageInput:not(:focus):hover {
-  background-color: #223864;
+  background-color: #1d3056;
+  border-bottom: 3px solid #1d3056;
 }
 
 .messageSendBtn {
