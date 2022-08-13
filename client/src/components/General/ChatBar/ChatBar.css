@@ -75,6 +75,7 @@
 
 .leaveTeam:hover {
   border: 3px solid rgb(255, 255, 255);
+  background-color: rgb(134, 13, 8);
 }
 
 .active {
@@ -86,11 +87,11 @@
 }
 
 .chatTab:hover {
-  border-bottom: 3px solid #7889bb;
+  border-bottom: 3px solid #97a4ca;
 }
 
 .noteTab:hover {
-  border-bottom: 3px solid #7889bb;
+  border-bottom: 3px solid #97a4ca;
   color: #fff;
 }
 

@@ -71,8 +71,13 @@ const SearchResults = ({ search, onClearHandler }) => {
             className="SearchUserDetails"
             onClick={() => gotoConversation(user._id, user.name)}
           >
-            <div className="SearchUserDetailsName">{user.name}</div> -
-            <div className="SearchUserDetailsEmail">{user.email}</div>
+            <div className="SearchUserDetailsImg">
+              {user.name && user.name.match(/\b(\w)/g).join("")}
+            </div>
+            <div className="SearchUserDetailsInfo">
+              <div className="SearchUserDetailsName">{user.name}</div>
+              <div className="SearchUserDetailsEmail">{user.email}</div>
+            </div>
           </div>
         ))}
       {result && result.length < 1 && (

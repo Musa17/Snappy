@@ -89,6 +89,10 @@
   color: #B0C4DE;
 }
 
+.chatMessageInput:not(:focus):hover {
+  background-color: #223864;
+}
+
 .messageSendBtn {
   display: flex;
   justify-content: flex-end;
