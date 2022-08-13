@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ChatBar.css";
 import VideoCameraImg from "../../../assets/images/Chat/VideoCamera.png";
+import VideoCameraHoverImg from "../../../assets/images/Chat/VideoCamera-hover.png";
 import { useHistory } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -77,14 +78,14 @@ const ChatBar = (props) => {
           <div className="tabs">
             <div
               id="chatTab"
-              className={props.active === "Chat" && "active"}
+              className={props.active === "Chat" ? "active" : "chatTab"}
               onClick={() => props.onChangeTab("Chat")}
             >
               Chat
             </div>
             <div
               id="notesTab"
-              className={props.active === "Notes" && "active"}
+              className={props.active === "Notes" ? "active" : "noteTab"}
               onClick={() => props.onChangeTab("Notes")}
             >
               Notes
@@ -126,9 +127,18 @@ const ChatBar = (props) => {
                   history.push(`/room/${props.conversation._id}`);
                 else history.push(`/room/${props.team._id}`);
               }}
+              onMouseOver={() => { 
+                let img = document.getElementById("videoCallImage");
+                img.src = VideoCameraHoverImg;
+              }}
+              onMouseOut={() => { 
+                let img = document.getElementById("videoCallImage");
+                img.src = VideoCameraImg;
+              }}
             >
               <img
                 src={VideoCameraImg}
+                id="videoCallImage"
                 alt="video"
                 style={{ cursor: "pointer" }}
               />

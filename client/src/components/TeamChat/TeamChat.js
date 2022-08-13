@@ -8,6 +8,7 @@ import SidebarHeading from "../General/SidebarHeading/SidebarHeading";
 import { useHistory, useParams } from "react-router-dom";
 import TeamLeftSide from "./TeamLeftSide/TeamLeftSide";
 import SendImg from "../../assets/images/TextBox/send.png";
+import SendHoverImg from "../../assets/images/TextBox/send-hover.png";
 import ChatBar from "../General/ChatBar/ChatBar";
 import { ToastContainer, toast } from "react-toastify";
 import Notes from "../Notes/Notes";
@@ -207,8 +208,17 @@ const TeamChat = () => {
           )}
           {active === "Chat" && (
             <div className="messageSendBtn">
-              <div onClick={() => onSubmitHandler()} className="submitButton">
-                <img src={SendImg} alt="Send" />
+              <div onClick={() => onSubmitHandler()} 
+                className="submitButton"
+                onMouseOver={() => { 
+                  let img = document.getElementById("sendImage");
+                  img.src = SendHoverImg;
+                }}
+                onMouseOut={() => { 
+                  let img = document.getElementById("sendImage");
+                  img.src = SendImg;
+                }}>
+                <img src={SendImg} alt="Send" id="sendImage"/>
               </div>
             </div>
           )}

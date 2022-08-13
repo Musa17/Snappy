@@ -70,6 +70,28 @@
   justify-items: center;
   flex-direction: row;
   cursor: pointer;
+  border: 3px solid rgb(255, 255, 255, 0);
+}
+
+.leaveTeam:hover {
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.active {
+  color: #fff;
+}
+
+.tabs {
+  color: rgb(170, 175, 204);
+}
+
+.chatTab:hover {
+  border-bottom: 3px solid #7889bb;
+}
+
+.noteTab:hover {
+  border-bottom: 3px solid #7889bb;
+  color: #fff;
 }
 
 .CharBarRight {
@@ -90,6 +112,13 @@
   background: inherit !important;
   border: none !important;
   box-shadow: none !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+}
+
+.codeBtn:hover {
+  color: #7F85F5 !important;
+  font-weight: 600 !important;
 }
 
 .dropdownBody .codeBody {
