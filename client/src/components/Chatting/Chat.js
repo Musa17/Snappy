@@ -22,6 +22,7 @@ const Chat = () => {
   const socket = useRef(io(mainUrl));
   const scrollRef = useRef();
   const [isLoading, setIsLoading] = useState(true);
+  const [active, setActive] = useState();
 
   useEffect(() => {
     // When the user connects it emits itself to the backend
@@ -153,8 +154,11 @@ const Chat = () => {
             {/* <input placeholder="Search for friends" className="chatMenuInput" /> */}
             <div className="chatMenuScroll">
               {conversations.map((chat) => (
-                <div key={chat._id} onClick={() => setCurrentChat(chat)}>
-                  <Conversation conversation={chat} currentUser={state} />
+                <div key={chat._id} onClick={() => {
+                  setCurrentChat(chat);
+                  setActive(chat);
+                }}>
+                  <Conversation conversation={chat} currentUser={state} active={active}/>
                 </div>
               ))}
             </div>
@@ -169,7 +173,8 @@ const Chat = () => {
                 conversation={currentChat}
                 currentUser={state}
                 video={true}
-                onGoBack={() => setCurrentChat(null)}
+                onGoBack={() => {setCurrentChat(null);
+                                setActive(null);}}
               />
               <div className="chatBoxTop">
                 {messages.map((message, i) => (

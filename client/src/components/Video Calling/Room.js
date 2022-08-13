@@ -359,7 +359,7 @@ const Room = (props) => {
                 alt="video off"
               />
             </div>
-            <div className="leaveVideo " onClick={leaveMeeting}>
+            <div className="leaveVideo" onClick={leaveMeeting}>
               <div className="leave">
                 <img src={Leave} alt="video off" /> Leave
               </div>
@@ -417,6 +417,7 @@ const Room = (props) => {
         </h1>
       )}
       {enter === -1 && <h1 className="videoCallingStart">CANNOT CONNECT</h1>}
+      <Loading />
     </div>
   );
 };

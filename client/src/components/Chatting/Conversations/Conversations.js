@@ -16,7 +16,7 @@ const Conversation = (props) => {
   }, []);
 
   return (
-    <div className="conversation">
+    <div className={props.conversation === props.active ? "conversationActive" : "conversation"}/*"conversation"*/>
       <span className="conversationImg">
         {user && user.name.match(/\b(\w)/g).join("")}
       </span>
