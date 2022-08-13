@@ -1,7 +1,11 @@
 .teamLeftSide {
+  margin-top: 20px;
   margin-left: 20px;
-  width: 250px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
 
 .teamLeftSideImg {
