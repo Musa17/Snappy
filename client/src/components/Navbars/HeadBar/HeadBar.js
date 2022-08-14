@@ -19,9 +19,7 @@ const HeadBar = (props) => {
     <div className="headBar">
       {window.innerWidth > 862 && (
         <div className="headBarBox">
-          <a href="/">
-          <img className="SnappyLogo" src={SnappyLogo} alt="logo" />{" "}
-          </a>
+          <img className="SnappyLogo" src={SnappyLogo} alt="logo" onClick={() => history.push("/")}/>{" "}
         </div>
       )}
       <div className="headSubBarBox">
@@ -86,6 +84,7 @@ const HeadBar = (props) => {
                       // function to clear the user data in the local storage and state
                       localStorage.clear();
                       dispatch({ type: "CLEAR" });
+                      history.push("/home");
                     }}
                   >
                     Sign Out
