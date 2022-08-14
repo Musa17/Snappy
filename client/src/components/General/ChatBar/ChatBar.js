@@ -5,6 +5,7 @@ import VideoCameraHoverImg from "../../../assets/images/Chat/VideoCamera-hover.p
 import { useHistory } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
 
 // Common bar used in all the chat and notes pages
 const ChatBar = (props) => {
@@ -108,7 +109,10 @@ const ChatBar = (props) => {
                 <div>{props.team.code}</div>
                 <CopyToClipboard
                   text={props.team.code}
-                  onCopy={() => setCopied(true)}
+                  onCopy={() => {
+                    setCopied(true);
+                    toast(`${"Text copied"}`);
+                  }}
                 >
                   <div className="copy">Copy</div>
                 </CopyToClipboard>
