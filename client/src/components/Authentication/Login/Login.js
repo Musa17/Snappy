@@ -74,7 +74,7 @@ const Login = (props) => {
       <ToastContainer />
       <div className="auth">
         <div>
-          <h1 className="authTeamsHeading">Snappy</h1>
+          <h1 className="authTeamsHeading">Sign In</h1>
         </div>
         <div className="authCard">
           <div>

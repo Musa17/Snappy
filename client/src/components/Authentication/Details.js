@@ -13,22 +13,24 @@ const Details = (props) => {
       {props.type === "radio" ? (
         <div>
           {props.options.map((option, i) => (
-            <div className="authRadio" key={i}>
-              <input
-                name={props.name}
-                onChange={(e) => {
-                  return props.onChangeHandler(e);
-                }}
-                type="radio"
-                value={option.heading + "." + option.description}
-                className="radioBtn"
-              />
+            <label>
+              <div className="authRadio" key={i}>
+                <input
+                  name={props.name}
+                  onChange={(e) => {
+                    return props.onChangeHandler(e);
+                  }}
+                  type="radio"
+                  value={option.heading + "." + option.description}
+                  className="radioBtn"
+                />
 
-              <div>
-                <div className="optionHeading">{option.heading}</div>
-                <div className="optionDesc">{option.description}</div>
+                <div>
+                  <div className="optionHeading">{option.heading}</div>
+                  <div className="optionDesc">{option.description}</div>
+                </div>
               </div>
-            </div>
+            </label>
           ))}
         </div>
       ) : (

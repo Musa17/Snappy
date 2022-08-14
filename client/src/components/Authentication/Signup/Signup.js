@@ -75,8 +75,8 @@ const Signup = (props) => {
   return (
     <div className="auth">
       <ToastContainer />
-      <div>
-        <h1 className="authTeamsHeading">Snappy</h1>
+      <div className="authTeamsHeading">
+        Sign Up
       </div>
       <div className="authCard">
         <div>
