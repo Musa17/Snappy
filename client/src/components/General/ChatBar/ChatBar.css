@@ -24,7 +24,7 @@
   border-radius: 50%;
   margin-right: 10px;
   margin-top: 10px;
-  background-color: #6d6fd8;
+  background-color: #65532b;
   height: 40px;
   width: 40px;
   display: flex;
@@ -38,15 +38,15 @@
   border-radius: 2px;
   margin-right: 10px;
   margin-top: 10px;
-  background-color: #6d6fd8;
+  background-color: #811616;
   height: 40px;
   width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .ChatBarTeamName {
