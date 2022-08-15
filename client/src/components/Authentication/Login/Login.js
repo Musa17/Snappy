@@ -89,6 +89,9 @@ const Login = (props) => {
                 heading="Enter an email"
                 description="We'll use this email to set up Snappy. If you already have a Snappy account, feel free to use that email here."
                 onChangeHandler={onChangeHandler}
+                errorMessage="It should be a valid email address!"
+                pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+"
+                required="true"
               />
             )}
 
@@ -101,6 +104,9 @@ const Login = (props) => {
                 placeholder="Password"
                 heading="Enter password"
                 onChangeHandler={onChangeHandler}
+                errorMessage="Password should be 8-20 characters and include at least 1 lowercase letter, 1 uppercase letter and 1 number!"
+                pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$"
+                required="true"
               />
             )}
           </div>
