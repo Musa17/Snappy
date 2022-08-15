@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Login = (props) => {
   const { state, dispatch } = useContext(UserContext);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const history = useHistory();
   const initialCredentials = {
@@ -24,6 +25,17 @@ const Login = (props) => {
     setCredentials((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
+
+    if (step === 1 && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)) {
+      setButtonDisabled(false);
+      console.log(buttonDisabled);
+    } else if (step === 2 && /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/.test(e.target.value)) {
+      setButtonDisabled(false);
+      console.log(buttonDisabled);
+    } else {
+      setButtonDisabled(true);
+      console.log(buttonDisabled);
+    }
   };
 
   // changing the slide for login
@@ -31,11 +43,11 @@ const Login = (props) => {
     if (step === 1) {
       if (
         credentials.email &&
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-          credentials.email
-        )
-      )
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(credentials.email)
+      ){
+        setButtonDisabled(true);
         setStep(2);
+      }
     }
   };
 
@@ -115,18 +127,22 @@ const Login = (props) => {
               <button
                 className="authBtn"
                 onClick={changeStep}
+                disabled={buttonDisabled}
               >
                 Next
               </button>
             ) : (
-              <button className="authBtn" onClick={onSubmitHandler}>
+              <button 
+                className="authBtn"
+                onClick={onSubmitHandler}
+                disabled={buttonDisabled}>
                 Submit
               </button>
             )}
           </div>
         </div>
         <div className="OtherAuth" onClick={() => history.push("/signup")}>
-          Don't have an account? Click to Signup
+          Don't have an account? Click to Sign up
         </div>
       </div>
     </React.Fragment>
