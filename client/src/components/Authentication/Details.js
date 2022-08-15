@@ -1,7 +1,15 @@
 import React from "react";
+import { useState } from "react";
 
 // Returns the inputs taken through authentications
 const Details = (props) => {
+
+  const [focused, setFocused] = useState(false);
+
+  const handleFocus = (e) => {
+    setFocused(true);
+  };
+
   return (
     <div className="details">
       {props.email && <div className="emailDetail">{props.email}</div>}
@@ -34,16 +42,25 @@ const Details = (props) => {
           ))}
         </div>
       ) : (
-        <input
-          name={props.name}
-          className="authInput"
-          placeholder={props.placeholder}
-          onChange={(e) => {
-            return props.onChangeHandler(e);
-          }}
-          value={props.value}
-          type={props.type}
-        />
+        <div>
+          <input
+            name={props.name}
+            className="authInput"
+            placeholder={props.placeholder}
+            focused={focused.toString()}
+            onBlur={handleFocus}
+            onChange={(e) => {
+              return props.onChangeHandler(e);
+            }}
+            value={props.value}
+            type={props.type}
+            pattern={props.pattern}
+            onFocus={() =>
+              setFocused(true)
+            }
+          />
+          <span className="invalidMessage">{props.errorMessage}</span>
+        </div>
       )}
     </div>
   );

@@ -30,15 +30,21 @@ const Signup = (props) => {
     if (step === 1) {
       if (
         credentials.email &&
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-          credentials.email
-        )
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(credentials.email)
       )
         setStep(2);
     } else if (step === 2) {
       if (credentials.email && credentials.use) setStep(3);
     } else if (step === 3) {
-      if (credentials.email && credentials.use && credentials.name) setStep(4);
+      if (credentials.email && credentials.use && credentials.name &&
+        /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{3,16}$/.test(credentials.name)
+      )
+        setStep(4);
+    } else if (step === 4) {
+      if (credentials.email && credentials.use && credentials.name && credentials.password &&
+        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/.test(credentials.password)
+      )
+        setStep(5);
     }
   };
 
@@ -84,6 +90,7 @@ const Signup = (props) => {
 
           {step === 1 && (
             <Details
+              key="1"
               name="email"
               type="email"
               value={credentials.email}
@@ -91,10 +98,14 @@ const Signup = (props) => {
               heading="Enter an email"
               description="We'll use this email to set up Snappy. If you already have a Snappy account, feel free to use that email here."
               onChangeHandler={onChangeHandler}
+              errorMessage="It should be a valid email address!"
+              pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+"
+              required="true"
             />
           )}
           {step === 2 && (
             <Details
+              key="2"
               name="use"
               type="radio"
               value={credentials.use}
@@ -121,16 +132,21 @@ const Signup = (props) => {
           )}
           {step === 3 && (
             <Details
+              key="3"
               name="name"
               type="text"
               value={credentials.name}
               placeholder="John Doe"
               heading="Enter your full name"
               onChangeHandler={onChangeHandler}
+              errorMessage="Username should be 3-16 characters and shouldn't include any special character!"
+              pattern="[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{3,16}"
+              required="true"
             />
           )}
           {step === 4 && (
             <Details
+              key="4"
               email={credentials.email}
               name="password"
               type="password"
@@ -138,11 +154,28 @@ const Signup = (props) => {
               placeholder="Password"
               heading="Enter password"
               onChangeHandler={onChangeHandler}
+              errorMessage="Password should be 8-20 characters and include at least 1 lowercase letter, 1 uppercase letter and 1 number!"
+              pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$"
+              required="true"
+            />
+          )}
+          {step === 5 && (
+            <Details
+              key="5"
+              email={credentials.email}
+              name="confirmPassword"
+              type="password"
+              placeholder="Confirm Password"
+              heading="Confirm password"
+              onChangeHandler={onChangeHandler}
+              errorMessage="Passwords don't match!"
+              pattern={credentials.password.toString()}
+              required="true"
             />
           )}
         </div>
         <div>
-          {step < 4 ? (
+          {step < 5 ? (
             <button
               className="authBtn"
               onClick={changeStep}

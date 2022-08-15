@@ -39,6 +39,21 @@
   justify-content: space-between;
 }
 
+.invalidMessage {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+.authInput:invalid[focused="true"]{
+  border-bottom: 2px solid red;
+}
+
+.authInput:invalid[focused="true"] ~ span{
+  display: block;
+}
+
 .emailDetail {
   padding-top: 20px;
 }

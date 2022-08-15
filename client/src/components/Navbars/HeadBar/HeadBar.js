@@ -78,17 +78,19 @@ const HeadBar = (props) => {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="signout"
-                    onClick={() => {
-                      // function to clear the user data in the local storage and state
-                      localStorage.clear();
-                      dispatch({ type: "CLEAR" });
-                      history.push("/home");
-                    }}
-                  >
-                    Sign Out
-                  </div>
+                  <a href="/">
+                    <div
+                      className="signout"
+                      onClick={() => {
+                        // function to clear the user data in the local storage and state
+                        localStorage.clear();
+                        dispatch({ type: "CLEAR" });
+                        history.push("/home");
+                      }}
+                    >
+                      Sign Out
+                    </div>
+                  </a>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
