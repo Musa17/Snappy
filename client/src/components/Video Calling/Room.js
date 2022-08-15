@@ -77,7 +77,7 @@ const Room = (props) => {
   const { state, dispatch } = useContext(UserContext);
   const [constraints, setConstraints] = useState({ video: true, audio: true });
   const [enter, setEnter] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Function to create new peer connection (when the user itself joins)
   const createPeer = (userToSignal, callerID, constraints, stream) => {
@@ -417,7 +417,6 @@ const Room = (props) => {
         </h1>
       )}
       {enter === -1 && <h1 className="videoCallingStart">CANNOT CONNECT</h1>}
-      <Loading />
     </div>
   );
 };
