@@ -17,12 +17,33 @@ const Signup = (props) => {
   };
   const [credentials, setCredentials] = useState(initialCredentials);
   const [step, setStep] = useState(1);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   // on manage change of input values
   const onChangeHandler = (e) => {
     setCredentials((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
+
+    if (step === 1 && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)) {
+      setButtonDisabled(false);
+      console.log(buttonDisabled);
+    } else if (step === 2) {
+      setButtonDisabled(false);
+      console.log(buttonDisabled);
+    } else if (step === 3 && /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{3,16}$/.test(e.target.value)) {
+      setButtonDisabled(false);
+      console.log(buttonDisabled);
+    } else if (step === 4 && /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/.test(e.target.value)) {
+      setButtonDisabled(false);
+      console.log(buttonDisabled);
+    } else if (step === 5 && credentials.password == e.target.value) {
+      setButtonDisabled(false);
+      console.log(buttonDisabled);
+    } else {
+      setButtonDisabled(true);
+      console.log(buttonDisabled);
+    }
   };
 
   // changing the slide for login
@@ -31,20 +52,29 @@ const Signup = (props) => {
       if (
         credentials.email &&
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(credentials.email)
-      )
+      ){
+        setButtonDisabled(true);
         setStep(2);
+      }
     } else if (step === 2) {
-      if (credentials.email && credentials.use) setStep(3);
+      if (credentials.email && credentials.use) {
+        setButtonDisabled(true);
+        setStep(3);
+      }
     } else if (step === 3) {
       if (credentials.email && credentials.use && credentials.name &&
         /^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{3,16}$/.test(credentials.name)
-      )
+      ){
+        setButtonDisabled(true);
         setStep(4);
+      }
     } else if (step === 4) {
       if (credentials.email && credentials.use && credentials.name && credentials.password &&
         /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/.test(credentials.password)
-      )
+      ){
+        setButtonDisabled(true);
         setStep(5);
+      }
     }
   };
 
@@ -179,11 +209,16 @@ const Signup = (props) => {
             <button
               className="authBtn"
               onClick={changeStep}
+              disabled={buttonDisabled}
             >
               Next
             </button>
           ) : (
-            <button className="authBtn" onClick={onSubmitHandler}>
+            <button
+              className="authBtn"
+              onClick={onSubmitHandler}
+              disabled={buttonDisabled}
+            >
               Submit
             </button>
           )}

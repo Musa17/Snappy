@@ -92,17 +92,26 @@
 
 .authBtn {
   background-color: #4b53bc;
-  border: 1px solid #4b53bc;
+  border: 2px solid #4b53bc;
   color: #fff;
   padding: 9px 50px;
   float: right;
   text-align: center;
   margin-top: 40px;
-  cursor: pointer;
+  cursor: unset;
 }
 
-.authBtn:hover {
+.authBtn:disabled{
+  border: 2px solid #4b53bc;
+  background: #fff;
+  font-weight: 500;
+  color: #4b53bc;
+  cursor: not-allowed;
+}
+
+.authBtn:not(:disabled):not(.disabled):hover{
   box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .authRadio {
