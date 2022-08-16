@@ -54,6 +54,14 @@ const Home = (props) => {
                     development@snappy.com
                   </div>
                 </div>
+                <div className="developerBlock">
+                  <div className="developerSubheading">
+                    Developer
+                  </div>
+                  <div className="developerContent">
+                    Antonio Musulin
+                  </div>
+                </div>
                 <div className="phoneBlock">
                   <div className="phoneSubheading">
                     Phone

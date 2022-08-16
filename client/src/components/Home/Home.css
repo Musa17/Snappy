@@ -142,7 +142,7 @@
 
 .emailBlock {
   height: 200px;
-  width: 250px;
+  /*width: 250px;*/
 }
 
 .emailSubheading {
@@ -158,9 +158,29 @@
   font-weight: 700;
 }
 
+.developerBlock {
+  height: 200px;
+  padding-left: 100px;
+  padding-right: 100px;
+  /*width: 250px;*/
+}
+
+.developerSubheading {
+  color: #2e254f;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.developerContent {
+  color: rgb(223, 223, 255);
+  padding-top: 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .phoneBlock {
   height: 200px;
-  width: 250px;
+  /*width: 250px;*/
 }
 
 .phoneSubheading {
