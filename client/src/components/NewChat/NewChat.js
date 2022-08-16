@@ -29,7 +29,7 @@ const NewChat = (props) => {
       });
     } catch (err) {
       console.log(err);
-      toast(
+      toast.error(
         `${
           err.response && err.response.data
             ? err.response.data.message
@@ -56,7 +56,7 @@ const NewChat = (props) => {
       })
       .catch((err) => {
         console.log(err);
-        toast(
+        toast.error(
           `${
             err.response && err.response.data
               ? err.response.data.message

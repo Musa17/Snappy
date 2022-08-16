@@ -98,7 +98,7 @@ const Signup = (props) => {
         console.log(err);
         setStep(1);
         setCredentials(initialCredentials);
-        toast(
+        toast.error(
           `${
             err.response && err.response.data
               ? err.response.data.message

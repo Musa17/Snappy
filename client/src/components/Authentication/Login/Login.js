@@ -71,7 +71,7 @@ const Login = (props) => {
         console.log(err);
         setCredentials(initialCredentials);
         setStep(1);
-        toast(
+        toast.error(
           `${
             err.response && err.response.data
               ? err.response.data.message

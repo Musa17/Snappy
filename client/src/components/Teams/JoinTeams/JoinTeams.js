@@ -16,7 +16,7 @@ const JoinTeams = (props) => {
   const JoinTeam = async () => {
     if (!code) {
       console.log("Enter Code");
-      toast(`Enter teams`);
+      toast.error(`Enter teams`);
       return;
     }
     try {
@@ -31,7 +31,7 @@ const JoinTeams = (props) => {
       }
     } catch (err) {
       console.log(err);
-      toast(
+      toast.error(
         `${
           err.response && err.response.data
             ? err.response.data.message

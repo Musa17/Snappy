@@ -111,7 +111,7 @@ const ChatBar = (props) => {
                   text={props.team.code}
                   onCopy={() => {
                     setCopied(true);
-                    toast(`${"Text copied"}`);
+                    toast.success(`${"Text copied"}`);
                   }}
                 >
                   <div className="copy">Copy</div>

@@ -19,7 +19,7 @@ const Notes = (props) => {
         setNotes(res.data.data);
       } catch (err) {
         console.log(err);
-        toast(
+        toast.error(
           `${
             err.response && err.response.data
               ? err.response.data.message

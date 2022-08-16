@@ -25,7 +25,7 @@ const MyVerticallyCenteredModal = (props) => {
     console.log(heading, description);
     if (!heading || !description) {
       console.log("Enter Name");
-      toast("Enter all the details");
+      toast.error("Enter all the details");
     }
 
     try {
@@ -40,7 +40,7 @@ const MyVerticallyCenteredModal = (props) => {
       props.onHide();
     } catch (err) {
       console.log(err);
-      toast(
+      toast.error(
         `${
           err.response && err.response.data
             ? err.response.data.message
