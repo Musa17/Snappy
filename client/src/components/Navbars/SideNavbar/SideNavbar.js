@@ -28,7 +28,7 @@ const SideNavbar = (props) => {
   return (
     <div
       className={
-        window.innerHeight < window.innerWidth ? "sideNavbar" : "bottomNavbar"
+        /*window.innerHeight < window.innerWidth ? */"sideNavbar"/* : "bottomNavbar"*/
       }
     >
       <div className="sideNavItems">

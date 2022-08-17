@@ -14,7 +14,7 @@
   bottom: 0;
   height: 60px;
   position: fixed;
-  background-color: #0a0a0a;
+  background-color: #012169;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,4 +99,59 @@
   /* padding: 0 5px; */
   text-align: center;
   font-size: 15px;
+}
+
+@media only screen and (max-width: 550px) {
+  .sideNavbar {
+    width: 75px;
+  }
+}
+
+@media only screen and (max-width: 725px) {
+  .sideNavbar {
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: unset;
+  }
+
+  .sideNavbar .sideNavItems {
+    display: flex;
+    justify-content: space-between;
+    /*padding: 4px 10px;*/
+    text-align: center;
+    color: #eee;
+    width: 100%;
+  }
+  
+  .sideNavbar .sideNavlink {
+    display: unset;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px 20px;
+  }
+  
+  .sideNavbar .activeLink {
+    border-left: none;
+    text-align: center;
+    padding: 5px 20px;
+  }
+  
+  .sideNavbar .sideNavlink .activeSideNavLink {
+    color: #7f81e1;
+    font-weight: 600;
+    border-bottom: 3px solid #7f81e1;
+    border-left: none;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .sideNavbar div {
+    padding-top: 0px;
+    font-size: 15px;
+  }
 }
