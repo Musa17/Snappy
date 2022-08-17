@@ -109,7 +109,6 @@
 
 .footerInfo {
   padding-top: 50px;
-  height: 300px;
   background-color: #5C41C1;
 }
 
@@ -142,7 +141,6 @@
 
 .emailBlock {
   height: 200px;
-  /*width: 250px;*/
 }
 
 .emailSubheading {
@@ -162,7 +160,6 @@
   height: 200px;
   padding-left: 100px;
   padding-right: 100px;
-  /*width: 250px;*/
 }
 
 .developerSubheading {
@@ -180,7 +177,6 @@
 
 .phoneBlock {
   height: 200px;
-  /*width: 250px;*/
 }
 
 .phoneSubheading {
@@ -245,6 +241,30 @@ height: 200px;
 
 .rightGif {
   height: 200px;
+}
+
+  @media only screen and (max-width: 1024px) {            
+    .contactBlock {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 0px;
+      font-size: 24px;
+    }
+    
+    .contactInfoBlock {
+      font-size: 24px;
+    }
+
+    .locationBlock {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 0px;
+      font-size: 24px;
+    }
+    
+    .locationInfoBlock {
+      font-size: 24px;
+    }
   }
 
 @media only screen and (max-width: 939px) {
@@ -260,9 +280,55 @@ height: 200px;
   .colLeft {
     padding: 60px 60px 50px 50px;
   }
+
+  .footerHeadingBlocks {
+    flex-direction: column;
+  }
+
+  .contactBlock {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .contactInfoBlock {
+    padding-top: 20px;
+  }
+
+  .emailBlock {
+    height: 100px;
+  }
+
+  .developerBlock {
+    height: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .phoneBlock {
+    height: 100px;
+  }
+
+  .locationBlock {
+    margin-top: 40px;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .locationInfoBlock {
+    padding-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
+  .NavHome {
+    padding: 10px 30px;
+}
+  
   .homePgMSHeading {
     font-size: 35px;
   }
@@ -281,6 +347,10 @@ height: 200px;
     width: 100%;
   }
 
+  .homeImg {
+    width: 70%;
+}
+
   .signinHome,
   .signupHome {
     margin: 10px auto;
@@ -292,5 +362,88 @@ height: 200px;
   
   .colLeft {
     padding: 60px 10px 50px 10px;
+  }
+
+  .developerBlock {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .NavHome {
+    padding: 10px 0px;
+    display: flex;
+    align-content: center;
+  }
+
+  .developerBlock {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .leftGif {
+    height: 150px;
+    }
+    
+  .rightGif {
+      height: 150px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .contactInfoBlock {
+    flex-direction: column;
+  }
+
+  .emailBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .emailContent {
+    padding-top: 10px;
+  }
+
+  .developerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .developerContent {
+    padding-top: 10px;
+  }
+
+  .phoneBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .phoneContent {
+    padding-top: 10px;
+  }
+
+  .addressBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .addressContent {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftGif {
+    height: 100px;
+  }
+    
+  .rightGif {
+    height: 100px;
   }
 }
