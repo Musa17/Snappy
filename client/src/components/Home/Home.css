@@ -243,29 +243,29 @@ height: 200px;
   height: 200px;
 }
 
-  @media only screen and (max-width: 1024px) {            
-    .contactBlock {
-      padding-left: 10px;
-      padding-right: 10px;
-      margin-right: 0px;
-      font-size: 24px;
-    }
-    
-    .contactInfoBlock {
-      font-size: 24px;
-    }
-
-    .locationBlock {
-      padding-left: 10px;
-      padding-right: 10px;
-      margin-right: 0px;
-      font-size: 24px;
-    }
-    
-    .locationInfoBlock {
-      font-size: 24px;
-    }
+@media only screen and (max-width: 1024px) {
+  .contactBlock {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 0px;
+    font-size: 24px;
   }
+  
+  .contactInfoBlock {
+    font-size: 24px;
+  }
+
+  .locationBlock {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 0px;
+    font-size: 24px;
+  }
+  
+  .locationInfoBlock {
+    font-size: 24px;
+  }
+}
 
 @media only screen and (max-width: 939px) {
   .homePgMSHeading {

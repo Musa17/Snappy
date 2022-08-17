@@ -204,7 +204,7 @@ const Signup = (props) => {
             />
           )}
         </div>
-        <div>
+        <div className="authBtnContainer">
           {step < 5 ? (
             <button
               className="authBtn"

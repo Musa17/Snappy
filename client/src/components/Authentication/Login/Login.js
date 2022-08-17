@@ -122,7 +122,7 @@ const Login = (props) => {
               />
             )}
           </div>
-          <div>
+          <div className="authBtnContainer">
             {step < 2 ? (
               <button
                 className="authBtn"
