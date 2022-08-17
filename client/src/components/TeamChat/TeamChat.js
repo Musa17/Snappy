@@ -13,6 +13,7 @@ import ChatBar from "../General/ChatBar/ChatBar";
 import { ToastContainer, toast } from "react-toastify";
 import Notes from "../Notes/Notes";
 import Loading from "../General/Loading/Loading";
+import SendMessage from "../../assets/images/Teams/SendMessage.png";
 
 const TeamChat = () => {
   const { state, dispatch } = useContext(UserContext);
@@ -186,14 +187,20 @@ const TeamChat = () => {
           />
           {active === "Chat" && (
             <div className="chatBoxTop">
-              {messages.map((message, i) => (
+              {!messages.length == 0 ? (messages.map((message, i) => (
                 <div key={message._id ? message._id : i} ref={scrollRef}>
                   <Message
                     own={checkOwn(message.sender._id)}
                     message={message}
                   />
                 </div>
-              ))}
+              ))
+              ) : (
+                <div className="sendMessage">
+                  <img src={SendMessage} className="sendMessageImg" />
+                  <div className="sendMessageText">Don't be shy, meet new people and start chatting with them</div>
+                </div>
+              )}
             </div>
           )}
           {active === "Chat" && (

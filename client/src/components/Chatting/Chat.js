@@ -9,6 +9,7 @@ import { mainUrl } from "../../api/index";
 import SidebarHeading from "../General/SidebarHeading/SidebarHeading";
 import SendImg from "../../assets/images/TextBox/send.png";
 import SendHoverImg from "../../assets/images/TextBox/send-hover.png";
+import OpenChat from "../../assets/images/Chat/OpenChat.png";
 import ChatBar from "../General/ChatBar/ChatBar";
 import { ToastContainer, toast } from "react-toastify";
 import Loading from "../General/Loading/Loading";
@@ -210,7 +211,10 @@ const Chat = () => {
               </div>
             </div>
           ) : (
-            <div className="openConversationText">Open a Conversation to start a chat.</div>
+            <div className="openConversation">
+              <img src={OpenChat} className="openConversationImg" />
+              <div className="openConversationText">Open a conversation to start a chat</div>
+            </div>
           )}
         </div>
       )}

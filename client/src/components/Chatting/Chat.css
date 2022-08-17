@@ -55,12 +55,47 @@
   border-top: 3px solid #0b2760;
 }
 
-.openConversationText {
+.openConversation {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 90vh;
-  color: #fff;
+  color: #eee;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.openConversationImg {
+  width: 300px;
+  height: 300px;
+}
+
+.openConversationText {
+  padding-top: 40px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.sendMessage {
+  margin-top: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+  color: #eee;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.sendMessageImg {
+  width: 300px;
+  height: 300px;
+}
+
+.sendMessageText {
+  padding-top: 40px;
   font-weight: 600;
   font-size: 1.3rem;
 }

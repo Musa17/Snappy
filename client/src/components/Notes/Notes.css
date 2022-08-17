@@ -66,3 +66,26 @@
   font-style: italic;
   margin-left: 10px;
 }
+
+.createNote {
+  margin-top: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+  color: #eee;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.createNoteImg {
+  width: 300px;
+  height: 300px;
+}
+
+.createNoteText {
+  padding-top: 40px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}

@@ -4,6 +4,7 @@ import "./Notes.css";
 import * as noteApi from "../../api/note";
 import { ToastContainer, toast } from "react-toastify";
 import ViewNote from "./ViewNote/ViewNote";
+import CreateNote from "../../assets/images/Notes/CreateNote.png";
 
 // import
 
@@ -50,9 +51,15 @@ const Notes = (props) => {
             : "allNotesFullWidth"
         }
       >
-        {notes.map((note) => (
+        {!notes.length == 0 ? (notes.map((note) => (
           <ViewNote note={note} />
-        ))}
+        ))
+        ) : (
+          <div className="createNote">
+            <img src={CreateNote} className="createNoteImg" />
+            <div className="createNoteText">Create a new note</div>
+          </div>
+        )}
       </div>
     </div>
   );
