@@ -17,17 +17,13 @@ const HeadBar = (props) => {
 
   return (
     <div className="headBar">
-      {window.innerWidth > 862 && (
-        <div className="headBarBox">
-          <img className="SnappyLogo" src={SnappyLogo} alt="logo" onClick={() => history.push("/")}/>{" "}
-        </div>
-      )}
+      <div className="headBarBox">
+        <img className="SnappyLogo" src={SnappyLogo} alt="logo" onClick={() => history.push("/")}/>{" "}
+      </div>
       <div className="headSubBarBox">
-        {window.innerWidth > 862 && (
-          <div className="headBarHeading">
-            <div className="headBarText">Snappy</div>
-          </div>
-        )}
+        <div className="headBarHeading">
+          <div className="headBarText">Snappy</div>
+        </div>
         <div className="headBarSearch">
           <input
             type="text"
