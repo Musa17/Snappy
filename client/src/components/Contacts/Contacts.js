@@ -69,11 +69,7 @@ const Contacts = (props) => {
 
   if(isLoading) return <Loading />
   return (
-    <div
-      className={
-        window.innerHeight < window.innerWidth ? "Contacts" : "ContactFullWidth"
-      }
-    >
+    <div className="Contacts">
       <div className="contactsTitle">Contacts</div>
       <div className="allContacts">
         {contacts &&
