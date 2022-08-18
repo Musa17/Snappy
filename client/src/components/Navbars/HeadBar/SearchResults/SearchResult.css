@@ -52,9 +52,15 @@
   color: #ccc;
 }
 
-@media only screen and (max-width: 862px) {
+@media only screen and (max-width: 600px) {
   .SearchResults {
     width: 75%;
-    top: 50px
+    top: 50px;
+  }
+}
+
+@media only screen and (max-width: 378px) {
+  .SearchResults {
+    width: 100%;
   }
 }
