@@ -1,7 +1,7 @@
 .message {
   display: flex;
   /* flex-direction: column; */
-  padding: 10px 0 10px 50px;
+  padding: 10px 0 10px 30px;
   /* margin-top: 10px; */
   color: #fff;
 }
@@ -31,7 +31,7 @@
 
 .message.own {
   justify-content: flex-end;
-  padding: 10px 90px 10px 0px;
+  padding: 10px 50px 10px 0px;
 }
 
 .message.own .messageBox {
@@ -54,28 +54,12 @@
   padding-left: 0;
 }
 
-@media only screen and (max-width: 1050px) {
-  .messageBox {
-    max-width: 60%;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .message.own {
-    padding: 10px 60px 10px 0px;
-  }
-
+@media only screen and (max-width: 450px) {
   .message {
     padding: 10px 0 10px 10px;
   }
-}
 
-@media only screen and (max-width: 700px) {
-  .message{
-    padding: 10px 0 10px 20px;
-  }
-
-  .message.own{
-    padding: 10px 20px 10px;
+  .message.own {
+    padding: 10px 20px 0px 0px;
   }
 }

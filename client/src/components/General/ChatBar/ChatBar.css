@@ -24,7 +24,7 @@
   border-radius: 50%;
   margin-right: 10px;
   margin-top: 10px;
-  background-color: #65532b;
+  background-color: #cf9821;
   height: 40px;
   width: 40px;
   display: flex;
@@ -124,7 +124,7 @@
 }
 
 .dropdownBody .codeBody {
-  width: 350px;
+  width: 320px;
   right: auto !important;
   top: 70px !important;
 }
@@ -150,36 +150,6 @@
 
 .leftArrow:hover {
   color: #fff;
-}
-
-@media only screen and (max-width: 900px) {
-  .ChatBar {
-    position: fixed;
-    width: calc(100% - 65px);
-  }
-
-  .chatFullWidth .ChatBar {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .ChatBarRightRow {
-    padding: 0;
-  }
-}
-@media only screen and (max-width: 475px) {
-  .ChatBarRightRow {
-    padding-right: 0;
-  }
-
-  .ChatBar {
-    font-size: 16px;
-  }
-
-  .ChatBarNameImg {
-    width: 35px;
-    height: 35px;
-  }
 }
 
 .tabs {
@@ -217,12 +187,75 @@
   border-radius: 4px;
 }
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 515px) {
   .ChatBar{
-    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: unset;
   }
 
-  .tabs{
-    font-size: 12px;
+  .ChatBarInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #06183d;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .ChatBarNameImgTeams {
+    margin-left: 15px;
+  }
+
+  .ChatBarTeamName {
+    margin-left: -75px;
+  }
+
+  .ChatBarLeaveTeam {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .CharBarVideoCalling {
+    margin-right: 0px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 7px;
+  }
+
+  .leaveTeam {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .ChatBarTeamName {
+    margin-left: -58px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .ChatBarTeamName {
+    margin-left: -28px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .ChatBarTeamName {
+    margin-left: 0px;
   }
 }

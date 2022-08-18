@@ -6,7 +6,7 @@ import { format } from "timeago.js";
 const Message = (props) => {
   return (
     <div className={props.own ? "message own" : "message"}>
-      {!props.own && window.innerWidth > 900 && (
+      {!props.own && (
         <div className="messagePic">
           {props.message.sender.name.match(/\b(\w)/g).join("")}
         </div>

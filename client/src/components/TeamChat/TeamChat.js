@@ -159,20 +159,14 @@ const TeamChat = () => {
 
   if (isLoading) return <Loading />;
   return (
-    <div
-      className={
-        window.innerHeight < window.innerWidth ? "chat" : "chatFullWidth"
-      }
-    >
+    <div className="chat">
       <ToastContainer />
-      {window.innerWidth > 900 && (
         <div className="chatMenu">
           <div className="chatMenuWrapper">
             <SidebarHeading heading="Team" />
             {team && <TeamLeftSide team={team} />}
           </div>
         </div>
-      )}
       <div className="chatBox">
         <div className="chatBoxWrapper">
           <ChatBar

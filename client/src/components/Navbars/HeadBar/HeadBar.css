@@ -106,12 +106,12 @@
   box-shadow: 0px 0px 8px 3px #0a204e;
   /* right: -10px !important; */
   left: 100% !important;
-  min-width: 350px !important;
+  min-width: 310px !important;
   padding: 0 0 !important;
   position: absolute !important;
   inset: 0px auto auto 0px !important;
   margin: 0px !important;
-  transform: translate3d(-310px, 42px, 0px) !important;
+  transform: translate3d(-275px, 42px, 0px) !important;
 }
 
 .profileOfUser {
@@ -181,6 +181,12 @@
   }
 }
 
+@media only screen and (max-width: 725px) {
+  .dropdownBody{
+    transform: translate3d(-270px, 42px, 0px) !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .headBarHeading {
     display: none;
@@ -204,5 +210,11 @@
 @media only screen and (max-width: 500px) {
   .headerBarSearchInput {
     width: 80%;
+  }
+}
+
+@media only screen and (max-width: 335px) {
+  .dropdownBody {
+    transform: translate3d(-259px, 42px, 0px) !important;
   }
 }
