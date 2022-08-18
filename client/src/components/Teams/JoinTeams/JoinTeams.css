@@ -23,3 +23,9 @@
   border-bottom: 2px solid #7f81e1;
   background-color: #0f1e42;
 }
+
+@media only screen and (max-width: 425px) {
+  .JoinTeams {
+    width: 200px;
+  }
+}

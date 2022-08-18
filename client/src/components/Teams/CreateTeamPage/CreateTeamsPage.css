@@ -44,3 +44,14 @@
   font-size: 1.3rem;
   margin: 1.1%;
 }
+
+@media only screen and (max-width: 725px) {
+  .teams {
+    margin-left: 0px;
+    padding-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+}

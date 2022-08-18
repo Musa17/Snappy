@@ -47,16 +47,11 @@ const Teams = (props) => {
 
   if (isLoading) return <Loading />;
   return (
-    <div
-      className={
-        window.innerHeight < window.innerWidth ? "teams" : "teamsFullWidth"
-      }
-    >
+    <div className="teams">
       <ToastContainer />
       <div className="teamsNav">
         <div className="teamsTitle">Teams</div>
-        <div
-          className="joinOrCreateTeamsBtn"
+        <div className="joinOrCreateTeamsBtn"
           onClick={() => history.push("/createTeams")}
         >
           Join or Create Team

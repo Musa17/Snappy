@@ -80,6 +80,36 @@
   background-color: #0f1e42;
 }
 
+.inputCreateTeamDesc {
+  height: 40px;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
+  color: #fff;
+  padding: 7px 10px;
+  border-bottom: 2px solid rgb(30, 31, 63);
+  resize: none;
+  border-radius: 2px;
+  background-color: #12244d;
+}
+
+.inputCreateTeamDesc::placeholder {
+  color: #B0C4DE;
+}
+
+.inputCreateTeamDesc:focus {
+  outline: none;
+  border: none;
+  background-color: #0f1e42;
+  border-bottom: 2px solid #7f81e1 !important;
+}
+
+.inputCreateTeamDesc:not(:focus):hover {
+  background-color: #0f1e42;
+}
+
 .modalCreateTeamsBodyBtns {
   display: flex;
   justify-content: flex-end;
@@ -116,4 +146,10 @@
 .modalCreateTeamsBodySubmit:not(:disabled):not(.disabled):hover{
   background-color: #4647ac !important;
   border: 3px solid rgba(210, 210, 210) !important;
+}
+
+@media only screen and (max-width: 430px) {
+  .inputCreateTeamDesc {
+    height: 70px;
+  }
 }

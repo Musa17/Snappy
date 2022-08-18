@@ -70,7 +70,7 @@ const MyVerticallyCenteredModal = (props) => {
         <div>
           <div className="inputCreateTeamLabel">Description :</div>
           <textarea
-            className="inputCreateTeam"
+            className="inputCreateTeamDesc"
             placeholder="Let people know what team is this about"
             onChange={(e) => setDescription(e.target.value)}
             value={description}

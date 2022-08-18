@@ -43,21 +43,11 @@ const CreateTeamsPage = (props) => {
 
   return (
 
-    <div
-      className={
-        window.innerHeight < window.innerWidth ? "teams" : "teamsFullWidth"
-      }
-    >
+    <div className="teams">
       <div className="teamsNav">
         <div className="teamsTitle">Teams</div>
       </div>
-      <div
-        className={
-          window.innerHeight < window.innerWidth
-            ? "createTeamsList"
-            : "createTeamsListFullWidth"
-        }
-      >
+      <div className="createTeamsList">
         <ToastContainer />
         <CreateTeams newTeamsHadler={(team) => newTeamsHadler(team)} />
         <JoinTeams newTeamsHadler={(team) => newTeamsHadler(team)} />
