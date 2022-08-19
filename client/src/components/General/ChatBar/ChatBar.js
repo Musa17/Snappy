@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ChatBar.css";
 import VideoCameraImg from "../../../assets/images/Chat/VideoCamera.png";
 import VideoCameraHoverImg from "../../../assets/images/Chat/VideoCamera-hover.png";
+import LeftArrow from "../../../assets/images/Chat/LeftArrow.png";
 import { useHistory } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -24,12 +25,11 @@ const ChatBar = (props) => {
   }, [props.conversation, props.currentUser._id]);
 
   return (
-    <div className="ChatBar">
-      <div className="ChatBarInfo">
+    <div className={props.team ? "ChatBar" : "ChatBarChat"}>
+      <div className={props.team ? "ChatBarInfo" : "ChatBarInfoChat"}>
         {window.innerWidth <= 900 && user && (
           <div className="leftArrow" onClick={() => props.onGoBack()}>
-            {" "}
-            ‹{" "}
+            <img src={LeftArrow} className="leftArrowImage" />
           </div>
         )}
 
@@ -46,7 +46,7 @@ const ChatBar = (props) => {
           </div>
         )}
 
-        <div className="ChatBarTeamName">
+        <div className={props.team ? "ChatBarTeamName" : "ChatBarTeamNameChat"}>
           {" "}
           {user && user.name}
           {/* {props.team && props.team.name} */}
@@ -121,11 +121,11 @@ const ChatBar = (props) => {
           </Dropdown>
         )}
       </div>
-      <div className="ChatBarLeaveTeam">
+      <div className={props.team ? "ChatBarLeaveTeam"  : "ChatBarLeaveTeamChat"}>
         {props.video && (
           <div className="CharBarRight">
             <div
-              className="CharBarVideoCalling"
+              className={props.team ? "ChatBarVideoCalling" : "ChatBarVideoCallingChat"}
               onClick={() => {
                 if (props.conversation)
                   history.push(`/room/${props.conversation._id}`);

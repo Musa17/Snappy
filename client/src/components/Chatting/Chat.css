@@ -19,6 +19,12 @@
   color: #fff;
 }
 
+.chatMenuTeam {
+  flex: 3;
+  background-color: #0d2c6b;
+  color: #fff;
+}
+
 .chatMenuInput {
   width: 90% !important;
   padding: 10px;
@@ -36,6 +42,7 @@
   flex: 9;
   padding: 0px 0px 10px;
   background-color: #1e3e7d;
+  height: 100%;
 }
 
 .chatBoxWrapper {
@@ -143,6 +150,12 @@
   height: 100%;
 }
 
+.chatMenuWrapperTeam,
+.chatBoxWrapper,
+.chatOnlineWrapper {
+  height: 100%;
+}
+
 .chatMenuScroll{
   overflow-y: scroll;
   height: calc(100vh - 110px);
@@ -164,12 +177,28 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .chatMenu {
+  .chat {
+    margin-left: 80px;
+    display: block;
+  }
+
+  .chatMenuTeam {
     display: none;
   }
 
-  .chat {
-    margin-left: 85px;
+  .openConversation {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .sendMessageImg {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .sendMessageText {
+    font-size: 1.2rem;
   }
 }
 
@@ -186,6 +215,13 @@
 @media only screen and (max-width: 586px) {  
   .sendMessageText {
     font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .sendMessageImg {
+    width: 220px;
+    height: 220px;
   }
 }
 

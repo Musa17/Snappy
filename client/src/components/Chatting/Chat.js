@@ -142,11 +142,7 @@ const Chat = () => {
 
   if (isLoading) return <Loading />;
   return (
-    <div
-      className={
-        window.innerHeight < window.innerWidth ? "chat" : "chatFullWidth"
-      }
-    >
+    <div className="chat">
       <ToastContainer />
       {(window.innerWidth > 900 || !currentChat) && (
         <div className="chatMenu">

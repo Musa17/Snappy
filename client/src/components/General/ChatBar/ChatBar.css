@@ -14,7 +14,29 @@
   /* z-index: 10; */
 }
 
+.ChatBarChat {
+  border-bottom: 1px solid #06183d;
+  /*padding: 0px 20px;*/
+  height: 60px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  /* height: 80px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 50px; */
+  /* top: 50px; */
+  /* z-index: 10; */
+}
+
 .ChatBarInfo {
+  display: flex;
+  padding: 20px 10px;
+  align-items: center;
+}
+
+.ChatBarInfoChat {
   display: flex;
   padding: 20px 10px;
   align-items: center;
@@ -53,7 +75,15 @@
   margin-top: 7px;
 }
 
+.ChatBarTeamNameChat {
+  margin-top: 7px;
+}
+
 .ChatBarLeaveTeam {
+  display: flex;
+}
+
+.ChatBarLeaveTeamChat {
   display: flex;
 }
 
@@ -101,7 +131,14 @@
   align-items: center;
 }
 
-.CharBarVideoCalling {
+.ChatBarVideoCalling {
+  margin-right: 35px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.ChatBarVideoCallingChat {
   margin-right: 35px;
   padding-top: 20px;
   display: flex;
@@ -138,14 +175,16 @@
 }
 
 .leftArrow {
-  font-size: 3rem;
-  line-height: 30px;
-  padding-right: 10px;
-  display: flex;
-  align-items: center;
-  /* align-self: center; */
-  padding-bottom: 10px;
-  color: #aaa;
+  height: 40px;
+  width: 40px;
+  margin-top: 7px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.leftArrowImage {
+  height: 40px;
+  width: 40px;
 }
 
 .leftArrow:hover {
@@ -220,7 +259,7 @@
     width: 100%;
   }
 
-  .CharBarVideoCalling {
+  .ChatBarVideoCalling {
     margin-right: 0px;
     margin-left: 30px;
     display: flex;
@@ -252,10 +291,20 @@
   .ChatBarTeamName {
     margin-left: -28px;
   }
+
+  .leftArrow {
+    margin-left: 0px;
+  }
 }
 
 @media only screen and (max-width: 390px) {
   .ChatBarTeamName {
     margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .ChatBarInfo {
+    padding: 0px 5px;
   }
 }

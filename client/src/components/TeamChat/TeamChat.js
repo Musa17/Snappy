@@ -161,8 +161,8 @@ const TeamChat = () => {
   return (
     <div className="chat">
       <ToastContainer />
-        <div className="chatMenu">
-          <div className="chatMenuWrapper">
+        <div className="chatMenuTeam">
+          <div className="chatMenuWrapperTeam">
             <SidebarHeading heading="Team" />
             {team && <TeamLeftSide team={team} />}
           </div>
