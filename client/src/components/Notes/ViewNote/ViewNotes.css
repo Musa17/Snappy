@@ -56,8 +56,14 @@
   box-shadow: none !important;
 }
 
-@media only screen and (max-width: 900px) {
-  .createTeamsNotesBtn {
-    margin: 70px 45px 10px 10px !important;
+@media only screen and (max-width: 426px) {
+  .modalViewNotesBody {
+    padding: 30px !important;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .modalViewNotesBodyCancelBtn {
+    margin-top: 30px;
   }
 }

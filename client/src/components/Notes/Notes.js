@@ -44,20 +44,16 @@ const Notes = (props) => {
         newTeamsHadler={(team) => setNewNotes(team)}
         teamsId={props.teamsId}
       />
-      <div
-        className={
-          window.innerHeight < window.innerWidth
-            ? "allNotes"
-            : "allNotesFullWidth"
-        }
-      >
+      <div className="allNotes">
         {!notes.length == 0 ? (notes.map((note) => (
           <ViewNote note={note} />
         ))
         ) : (
-          <div className="createNote">
-            <img src={CreateNote} className="createNoteImg" />
-            <div className="createNoteText">Create a new note</div>
+          <div className="createNoteContainer">
+            <div className="createNote">
+              <img src={CreateNote} className="createNoteImg" />
+              <div className="createNoteText">Create a new note</div>
+            </div>
           </div>
         )}
       </div>

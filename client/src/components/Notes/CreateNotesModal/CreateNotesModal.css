@@ -122,3 +122,15 @@
     margin: 70px 45px 10px 10px !important;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .createTeamsNotesBtn {
+    margin: 23px 45px 10px 10px !important;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .createTeamsNotesBtn {
+    margin: 23px 20px 10px 10px !important;
+  }
+}
