@@ -21,11 +21,9 @@
 .peerVideotrue,
 .userVideotrue {
   width: 40%;
-  /* border: 1px solid #5f61d1; */
-  background-color: #0a0a0a;
-  box-shadow: 0px 0px 4px 2px #161616;
+  background-color: #0d2c6b;
+  box-shadow: 0px 0px 4px 4px #03153a;
   border-radius: 4px;
-  /* position: relative; */
 }
 
 .headVideoPanel {
@@ -61,7 +59,6 @@
 .leave {
   font-size: 14px;
   background: rgb(164, 13, 8);
-  /* margin: 10px; */
   font-weight: 500;
   padding: 5px 20px;
   border-radius: 3px;
@@ -90,7 +87,6 @@
 .videoFor2 {
   width: 48%;
   height: 90%;
-  /* height: calc(100vh - 120px); */
 }
 
 .videoFor3 {
@@ -103,15 +99,10 @@
   height: 45%;
 }
 
-/* .videoFor3:last-child {
-  width: 95%;
-  height: 55%;
-} */
-
 .videoOff-true {
   width: 100%;
   /* background-color: gold; */
-  border: 2px solid #7f81e1;
+  border: 4px solid #7f81e1;
   border-radius: 4px;
   height: 100%;
   background-color: #191919;
@@ -168,6 +159,12 @@
   background-color: #0a0a0a;
 }
 
+.videoCallingStart {
+  background: #1f1f1f;
+  width: 100%;
+  height: 100vh;
+}
+
 @media only screen and (max-width: 746px) {
   .videoFor2 {
     width: 70%;
@@ -177,6 +174,18 @@
   .videoOffFor1 {
     width: 70%;
     height: 45%;
+  }
+
+  .peerVideotrue,
+  .userVideotrue {
+    height: 45%;
+  }
+}
+
+@media only screen and (max-width: 725px) {
+  .videoCalling {
+    margin-left: 0px;
+    margin-bottom: 60px;
   }
 }
 
@@ -202,16 +211,17 @@
     width: 70%;
     height: 45%;
   }
+
+  .headVideoPanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 }
 
 @media only screen and (max-width: 352px) {
   .controlVideo {
     padding: 10px 10px 0;
   }
-}
-
-.videoCallingStart{
-  background: #1f1f1f;
- width: 100%;
- height: 100vh;
 }
