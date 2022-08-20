@@ -30,7 +30,7 @@ app.use(cors());
 
 // connecting to mongoDB
 mongoose
-  .connect(process.env.MONGOURI, {
+  .connect(process.env.MONGOURI_HOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -58,6 +58,15 @@ app.use("/api/message", messageRouter);
 app.use("/api/teams", teamsRouter);
 app.use("/api/messageTeams", teamsMessageRouter);
 app.use("/api/notes", notesRouter);
+
+// For production side
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("client/build"));
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 // Listening
 server.listen(process.env.PORT || 5000, () =>
